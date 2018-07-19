@@ -1,4 +1,8 @@
 {
+  "maintenance": {
+    "enabled": true,
+    "text": "サーバーメインテナンス中です"
+  },
   "companies": [
     {
       "id": 0,
