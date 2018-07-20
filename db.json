@@ -15,6 +15,7 @@
     "token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
   },
   "check_email_is_available": {},
+  "register_send_mail": {},
   "companies": [
     {
       "id": 0,
