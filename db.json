@@ -12,7 +12,7 @@
     "last_login_datetime": "2018-07-20T02:52:28.574Z"
   },
   "codeLogin": {
-    "key": "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    "token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
   },
   "check_email_is_available": {},
   "companies": [
