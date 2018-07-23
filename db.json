@@ -189,6 +189,7 @@
       "id": 1,
       "title": "ニッセイ三大疾病保険",
       "icon": "home",
+      "renew": true,
       "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
       "renewal_datetime": "更新 2018年08月20日"
     },
@@ -196,6 +197,7 @@
       "id": 2,
       "title": "チューリッヒ自動車保険",
       "icon": "heart",
+      "renew": true,
       "extra": ["トヨタ MR-S", "大宮 501 な 9931"],
       "renewal_datetime": "更新 2018年09月20日"
     },
