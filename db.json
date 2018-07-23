@@ -315,13 +315,14 @@
   "contract_detail": {
     "id": 0,
     "icon": "car-side",
+    "title": "チューリッヒ自動車保険",
     "renew": true,
     "company": {
       "label": "保険会社",
       "value": "チューリッヒ",
       "show": true
     },
-    "title": {
+    "title2": {
       "label": "商品名",
       "value": "チューリッヒ自動車保険",
       "show": true
