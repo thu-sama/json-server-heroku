@@ -8,8 +8,9 @@
   "auth": {
     "name": "山田　明人",
     "email": "yamada@a.com",
+    "last_login_datetime": "2018-07-20T02:52:28.574Z",
     "session": "ddasfasf-adsfasf-sadfa-fdsafas-fdasf-dasfdas",
-    "last_login_datetime": "2018-07-20T02:52:28.574Z"
+    "type": 0
   },
   "codeLogin": {
     "token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
