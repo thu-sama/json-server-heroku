@@ -312,6 +312,50 @@
       "renewal_datetime": "2019-07-20 18:50:04"
     }
   ],
+  "contract_detail": {
+    "id": 0,
+    "icon": "car-side",
+    "renew_noti": true,
+    "company": {
+      "label": "保険会社",
+      "value": "チューリッヒ",
+      "show": true
+    },
+    "title": {
+      "label": "商品名",
+      "value": "チューリッヒ自動車保険",
+      "show": true
+    },
+    "subtitle": {
+      "label": "登録車種",
+      "value": "トヨタ MR-S",
+      "show": true
+    },
+    "code": {
+      "label": "証券番号",
+      "value": "213123123123213",
+      "show": true
+    },
+    "contract_datetime": {
+      "label": "契約日",
+      "value": "2017年7月20日",
+      "show": true
+    },
+    "renewal_datetime": {
+      "label": "更新日",
+      "value": "2017年7月21日",
+      "show": true
+    },
+    "description": {
+      "label": "契約概要",
+      "value": "大宮 501 な 9931",
+      "show": true
+    },
+    "app": {
+      "iOS": "https://fdsafadsfsdafadsfdasf",
+      "android": "https://play.google.comfdasfasfasdfa"
+    }
+  },
   "posts": [
     {
       "id": 0,
