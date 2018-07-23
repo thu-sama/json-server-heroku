@@ -345,7 +345,8 @@
     "renewal_datetime": {
       "label": "更新日",
       "value": "2017年7月21日",
-      "show": true
+      "show": true,
+      "update_button": true
     },
     "description": {
       "label": "契約概要",
