@@ -315,7 +315,7 @@
   "contract_detail": {
     "id": 0,
     "icon": "car-side",
-    "renew_noti": true,
+    "renew": true,
     "company": {
       "label": "保険会社",
       "value": "チューリッヒ",
