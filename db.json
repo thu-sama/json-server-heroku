@@ -180,136 +180,85 @@
     {
       "id": 0,
       "title": "チューリッヒ自動車保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "トヨタ MR-S",
-      "description": "大宮 501 な 9931",
       "icon": "car-side",
-      "renewal_datetime": "2018-07-21 18:50:04"
+      "renewal_datetime": "更新 2018年7月21日",
+      "renew": true,
+      "extra": ["トヨタ MR-S", "大宮 501 な 9931"]
     },
     {
       "id": 1,
       "title": "ニッセイ三大疾病保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
       "icon": "home",
-      "renewal_datetime": "2018-08-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2018年08月20日"
     },
     {
       "id": 2,
       "title": "チューリッヒ自動車保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "トヨタ MR-S",
-      "description": "大宮 501 な 9931",
       "icon": "heart",
-      "renewal_datetime": "2018-09-20 18:50:04"
+      "extra": ["トヨタ MR-S", "大宮 501 な 9931"],
+      "renewal_datetime": "更新 2018年09月20日"
     },
     {
       "id": 3,
       "title": "ニッセイ三大疾病保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
-      "renewal_datetime": "2018-10-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2018年10月20日"
     },
     {
       "id": 4,
       "title": "ニッセイ三大疾病保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
-      "renewal_datetime": "2018-11-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2018年11月20日"
     },
     {
       "id": 5,
       "title": "ニッセイ三大疾病保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
-      "renewal_datetime": "2018-12-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2018年12月20日"
     },
     {
       "id": 6,
       "title": "ニッセイ三大疾病保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
-      "renewal_datetime": "2019-01-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2019年01月20日"
     },
     {
       "id": 7,
       "title": "ニッセイ三大疾病保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
-      "renewal_datetime": "2019-02-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2019年02月20日"
     },
     {
       "id": 8,
       "title": "ニッセイ三大疾病保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
-      "renewal_datetime": "2019-03-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2019年03月20日"
     },
     {
       "id": 9,
       "title": "ニッセイ三大疾病保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
-      "renewal_datetime": "2019-04-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2019年04月20日"
     },
     {
       "id": 10,
       "title": "ニッセイ三大疾病保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
-      "renewal_datetime": "2019-05-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2019年05月20日"
     },
     {
       "id": 11,
       "title": "ニッセイ三大疾病保険",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
-      "renewal_datetime": "2019-06-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2019年06月20日"
     },
     {
       "id": 12,
       "title":
         "ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険ニッセイ三大疾病保険abc",
-      "company": "チューリッヒ",
-      "code": "213123123123213",
-      "contract_datetime": "2017-07-20 18:50:04",
-      "subtitle": "死亡1000万",
-      "description": "入院給付 1日4万 最大60日",
-      "renewal_datetime": "2019-07-20 18:50:04"
+      "extra": ["死亡1000万", "入院給付 1日4万 最大60日"],
+      "renewal_datetime": "更新 2019年07月20日"
     }
   ],
   "contract_detail": {
