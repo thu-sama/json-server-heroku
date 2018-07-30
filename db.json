@@ -18,8 +18,8 @@
     "type": 0,
     "company": {
       "_id": "0",
-      "main": "#342424",
-      "secondary": "#432424",
+      "main": "#07fff6",
+      "secondary": "#e21efc",
       "menuFirstTitle": "#2eb8db",
       "menuBackground": "#ab3462",
       "link": "#71ef28",
