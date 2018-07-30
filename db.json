@@ -8,6 +8,7 @@
   "CODE_LOGIN": {
     "token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
   },
+  "CHECK_MAIL_CONFLICT": {},
   "auth": {
     "name": "山田　明人",
     "email": "yamada@a.com",
@@ -18,7 +19,6 @@
   "codeLogin": {
     "token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
   },
-  "check_email_is_available": {},
   "register_send_mail": {},
   "noti_badge": {
     "noti": 3,
