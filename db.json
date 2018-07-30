@@ -20,11 +20,11 @@
       "_id": "0",
       "main": "#342424",
       "secondary": "#432424",
-      "menuFirstTitle": "#432454",
+      "menuFirstTitle": "#2eb8db",
       "menuBackground": "#ab3462",
-      "link": "#135674",
-      "addNewContractDescription": "#842daf",
-      "contractDetailButtonText": "#235abc",
+      "link": "#71ef28",
+      "addNewContractDescription": "#a91cef",
+      "contractDetailButtonText": "#ff8b0f",
       "logo": "https://www.mplf.net/img/1.jpg"
     }
   },
