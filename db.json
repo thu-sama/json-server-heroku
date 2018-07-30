@@ -18,8 +18,13 @@
     "type": 0,
     "company": {
       "_id": "0",
-      "mainColor": "#342424",
-      "secondaryColor": "#432424",
+      "main": "#342424",
+      "secondary": "#432424",
+      "menuFirstTitle": "#432454",
+      "menuBackground": "#ab3462",
+      "link": "#135674",
+      "addNewContractDescription": "#842daf",
+      "contractDetailButtonText": "#235abc",
       "logo": "https://www.mplf.net/img/1.jpg"
     }
   },
