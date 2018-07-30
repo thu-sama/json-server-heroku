@@ -9,6 +9,7 @@
     "token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
   },
   "CHECK_MAIL_CONFLICT": {},
+  "REGISTER_SEND_MAIL": {},
   "auth": {
     "name": "山田　明人",
     "email": "yamada@a.com",
@@ -19,7 +20,6 @@
   "codeLogin": {
     "token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
   },
-  "register_send_mail": {},
   "noti_badge": {
     "noti": 3,
     "message": 5
