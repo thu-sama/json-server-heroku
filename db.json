@@ -18,13 +18,13 @@
     "type": 0,
     "company": {
       "_id": "0",
-      "main": "#54adb9",
-      "secondary": "#f4a578",
-      "menuFirstTitle": "#b23e2b",
-      "menuBackground": "#f4efe7",
-      "link": "#6da4c4",
-      "addNewContractDescription": "#5a403b",
-      "contractDetailButtonText": "#5a403b",
+      "main": "#2ded96",
+      "secondary": "#2d43e5",
+      "menuFirstTitle": "#d5dd35",
+      "menuBackground": "#a535dd",
+      "link": "#f92545",
+      "addNewContractDescription": "#46ce8c",
+      "contractDetailButtonText": "#46ce8c",
       "logo": "https://www.mplf.net/img/1.jpg"
     }
   },
