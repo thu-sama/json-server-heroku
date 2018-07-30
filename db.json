@@ -10,15 +10,18 @@
   },
   "CHECK_MAIL_CONFLICT": {},
   "REGISTER_SEND_MAIL": {},
-  "auth": {
-    "name": "山田　明人",
+  "LOGIN": {
+    "_id": "uuuu",
     "email": "yamada@a.com",
-    "last_login_datetime": "2018-07-20T02:52:28.574Z",
-    "session": "ddasfasf-adsfasf-sadfa-fdsafas-fdasf-dasfdas",
-    "type": 0
-  },
-  "codeLogin": {
-    "token": "AAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+    "lastLoginAt": "2018-07-20T02:52:28.574Z",
+    "session": "sssss-sssss-sssss-sssss",
+    "type": 0,
+    "company": {
+      "_id": "0",
+      "mainColor": "#342424",
+      "secondaryColor": "#432424",
+      "logo": "https://www.mplf.net/img/1.jpg"
+    }
   },
   "noti_badge": {
     "noti": 3,
