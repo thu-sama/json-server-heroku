@@ -199,7 +199,7 @@
       "read": true
     }
   ],
-  "NOTIFICATIONS/READ": {
+  "NOTIFICATIONS_READ": {
     "okay": true
   },
   "contracts": [
