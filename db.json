@@ -101,7 +101,7 @@
       "logo": "https://www.mplf.net/img/1.jpg"
     }
   ],
-  "noti_badge": {
+  "NOTI_BADGE": {
     "noti": 3,
     "message": 5
   },
