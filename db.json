@@ -295,8 +295,9 @@
     "title": "チューリッヒ自動車保険",
     "renew": true,
     "app": {
-      "iOS": "https://fdsafadsfsdafadsfdasf",
-      "android": "https://play.google.comfdasfasfasdfa"
+      "iOS": "https://itunes.apple.com/jp/app/map-life/id998494444?mt=8",
+      "android":
+        "https://play.google.com/store/apps/details?id=jp.co.maplife&hl=en"
     },
     "fields": {
       "company": {
