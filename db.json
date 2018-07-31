@@ -199,6 +199,9 @@
       "read": true
     }
   ],
+  "NOTIFICATIONS/READ": {
+    "okay": true
+  },
   "contracts": [
     {
       "id": 0,
