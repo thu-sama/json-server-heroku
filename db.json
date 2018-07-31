@@ -330,5 +330,197 @@
         "value": "大宮 501 な 9931"
       }
     }
+  },
+  "CONTRACT_RENEW_READ": {
+    "_id": 0,
+    "icon": "car-side",
+    "title": "チューリッヒ自動車保険",
+    "fields": {
+      "company": {
+        "label": "保険会社",
+        "value": "チューリッヒ"
+      },
+      "title2": {
+        "label": "商品名",
+        "value": "チューリッヒ自動車保険"
+      },
+      "subtitle": {
+        "label": "登録車種",
+        "value": "トヨタ MR-S"
+      },
+      "code": {
+        "label": "証券番号",
+        "value": "213123123123213"
+      },
+      "createdAt": {
+        "label": "契約日",
+        "value": "2017年7月20日"
+      },
+      "renewAt": {
+        "label": "更新日",
+        "value": "平成30年 6月 3日",
+        "updateButton": true
+      },
+      "description": {
+        "label": "契約概要",
+        "value": "大宮 501 な 9931"
+      },
+      "prop1": {
+        "label": "登録番号",
+        "value": "川口 301 な 9923",
+        "type": "text"
+      },
+      "prop2": {
+        "label": "免許の色",
+        "value": "ブルー",
+        "type": "select",
+        "selections": [
+          {
+            "label": "ブルー",
+            "value": "blue"
+          },
+          {
+            "label": "赤",
+            "value": "red"
+          },
+          {
+            "label": "黒",
+            "value": "black"
+          }
+        ]
+      }
+    },
+    "plan": {
+      "year": {
+        "label": "運転者限定年齢条件",
+        "old": "運転者本人 配偶者限定 35才以上保障",
+        "new": {
+          "type": "select",
+          "value": [
+            {
+              "label": "18歳以上",
+              "value": 18,
+              "selected": true
+            },
+            {
+              "label": "26歳以上",
+              "value": 26
+            },
+            {
+              "label": "35歳以上",
+              "value": 35
+            },
+            {
+              "label": "制限なし",
+              "value": false
+            }
+          ]
+        }
+      },
+      "field1": {
+        "label": "対人保障",
+        "old": "無制限",
+        "new": {
+          "type": "select",
+          "value": [
+            {
+              "label": "無制限",
+              "value": "無制限",
+              "selected": true
+            },
+            {
+              "label": "100万",
+              "value": "100万"
+            },
+            {
+              "label": "200万",
+              "value": "200万"
+            }
+          ]
+        }
+      },
+      "field2": {
+        "label": "対物保障",
+        "old": "無制限免責なし",
+        "new": {
+          "type": "select",
+          "selections": [
+            {
+              "label": "無制限免責なし",
+              "value": "無制限免責なし",
+              "selected": true
+            },
+            {
+              "label": "無制限免責あり",
+              "value": "無制限免責あり"
+            }
+          ]
+        }
+      },
+      "field3": {
+        "label": "対物超過修理費用",
+        "old": "保障あり",
+        "new": {
+          "type": "select",
+          "selections": [
+            {
+              "label": "保障あり",
+              "value": true
+            },
+            {
+              "label": "保障なし",
+              "value": false,
+              "selected": true
+            }
+          ]
+        }
+      },
+      "field4": {
+        "label": "人身障害",
+        "old": "5000万円無保険者障害2億円",
+        "new": {
+          "type": "select",
+          "selections": [
+            {
+              "label": "5000万円無保険者障害2億円",
+              "value": "5000万円無保険者障害2億円"
+            },
+            {
+              "label": "5000万円無保険者障害10億円",
+              "value": "5000万円無保険者障害10億円",
+              "selected": true
+            },
+            {
+              "label": "5000万円無保険者障害100億円",
+              "value": "5000万円無保険者障害100億円"
+            }
+          ]
+        }
+      },
+      "field5": {
+        "label": "重度後遺症障害時"
+      },
+      "field6": {
+        "label": "搭乗者障害"
+      },
+      "field7": {
+        "label": "ロードサービス",
+        "old": "保証あり"
+      },
+      "field8": {
+        "label": "クレジットカード",
+        "old": "月払い"
+      },
+      "field9": {
+        "label": "月額",
+        "old": "4680円",
+        "new": "6070円"
+      },
+      "field10": {
+        "label": "年間",
+        "old": "56160円",
+        "new": "72840円"
+      }
+    }
   }
 }
