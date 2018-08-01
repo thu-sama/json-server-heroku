@@ -335,6 +335,7 @@
     "_id": 0,
     "icon": "car-side",
     "title": "チューリッヒ自動車保険",
+    "renew": true,
     "fields": {
       "company": {
         "label": "保険会社",
