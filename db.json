@@ -358,8 +358,7 @@
       },
       "renewAt": {
         "label": "更新日",
-        "value": "平成30年 6月 3日",
-        "updateButton": true
+        "value": "平成30年 6月 3日"
       },
       "description": {
         "label": "契約概要",
