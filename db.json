@@ -395,12 +395,12 @@
         "label": "運転者限定年齢条件",
         "old": "運転者本人 配偶者限定 35才以上保障",
         "new": {
+          "value": 18,
           "type": "select",
-          "value": [
+          "selections": [
             {
               "label": "18歳以上",
-              "value": 18,
-              "selected": true
+              "value": 18
             },
             {
               "label": "26歳以上",
@@ -421,20 +421,20 @@
         "label": "対人保障",
         "old": "無制限",
         "new": {
+          "value": 100,
           "type": "select",
-          "value": [
+          "selections": [
             {
               "label": "無制限",
-              "value": "無制限",
-              "selected": true
+              "value": "無制限"
             },
             {
               "label": "100万",
-              "value": "100万"
+              "value": 100
             },
             {
               "label": "200万",
-              "value": "200万"
+              "value": 200
             }
           ]
         }
@@ -443,12 +443,12 @@
         "label": "対物保障",
         "old": "無制限免責なし",
         "new": {
+          "value": "無制限免責なし",
           "type": "select",
           "selections": [
             {
               "label": "無制限免責なし",
-              "value": "無制限免責なし",
-              "selected": true
+              "value": "無制限免責なし"
             },
             {
               "label": "無制限免責あり",
@@ -461,6 +461,7 @@
         "label": "対物超過修理費用",
         "old": "保障あり",
         "new": {
+          "value": false,
           "type": "select",
           "selections": [
             {
@@ -469,8 +470,7 @@
             },
             {
               "label": "保障なし",
-              "value": false,
-              "selected": true
+              "value": false
             }
           ]
         }
@@ -479,6 +479,7 @@
         "label": "人身障害",
         "old": "5000万円無保険者障害2億円",
         "new": {
+          "value": "5000万円無保険者障害10億円",
           "type": "select",
           "selections": [
             {
@@ -487,8 +488,7 @@
             },
             {
               "label": "5000万円無保険者障害10億円",
-              "value": "5000万円無保険者障害10億円",
-              "selected": true
+              "value": "5000万円無保険者障害10億円"
             },
             {
               "label": "5000万円無保険者障害100億円",
