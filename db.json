@@ -372,7 +372,7 @@
       },
       "prop2": {
         "label": "免許の色",
-        "value": "ブルー",
+        "value": "blue",
         "type": "select",
         "selections": [
           {
