@@ -526,45 +526,17 @@
   "CONTRACT_RENEW": {},
   "MESSAGES": [
     {
-      "_id": "5",
-      "text": "承知いたしました。",
-      "createdAt": "2018-07-25T02:52:28.574Z",
-      "user": {
-        "_id": "2",
-        "name": "担当",
-        "avatar": "https://image.flaticon.com/icons/png/128/149/149071.png"
-      },
-      "unread": true
-    },
-    {
-      "_id": "4",
-      "text": "はい、これでお願いします。",
-      "createdAt": "2018-07-24T02:52:28.574Z",
+      "id": "0",
+      "_id": "0",
+      "text": "こんにちは。この保険について質問があります",
+      "createdAt": "2018-07-20T02:52:28.574Z",
       "user": {
         "_id": "uuuu",
         "name": "ユーザーさん"
       }
     },
     {
-      "_id": "3",
-      "text": "こちらでよろしいでしょうか？",
-      "createdAt": "2018-07-23T02:52:28.574Z",
-      "user": {
-        "_id": "2",
-        "name": "担当",
-        "avatar": "https://image.flaticon.com/icons/png/128/149/149071.png"
-      }
-    },
-    {
-      "_id": "2",
-      "text": "わかりました。",
-      "createdAt": "2018-07-22T02:52:28.574Z",
-      "user": {
-        "_id": "uuuu",
-        "name": "ユーザーさん"
-      }
-    },
-    {
+      "id": "1",
       "_id": "1",
       "text":
         "ご無沙汰しております。お問い合わせありがとうございます。お問い合わせの件ですが資料を用意しまして一度お伺いしたいと思いますが如何でしょうか？",
@@ -576,13 +548,47 @@
       }
     },
     {
-      "_id": "0",
-      "text": "こんにちは。この保険について質問があります",
-      "createdAt": "2018-07-20T02:52:28.574Z",
+      "id": "2",
+      "_id": "2",
+      "text": "わかりました。",
+      "createdAt": "2018-07-22T02:52:28.574Z",
       "user": {
         "_id": "uuuu",
         "name": "ユーザーさん"
       }
+    },
+    {
+      "id": "3",
+      "_id": "3",
+      "text": "こちらでよろしいでしょうか？",
+      "createdAt": "2018-07-23T02:52:28.574Z",
+      "user": {
+        "_id": "2",
+        "name": "担当",
+        "avatar": "https://image.flaticon.com/icons/png/128/149/149071.png"
+      }
+    },
+    {
+      "id": "4",
+      "_id": "4",
+      "text": "はい、これでお願いします。",
+      "createdAt": "2018-07-24T02:52:28.574Z",
+      "user": {
+        "_id": "uuuu",
+        "name": "ユーザーさん"
+      }
+    },
+    {
+      "id": "5",
+      "_id": "5",
+      "text": "承知いたしました。",
+      "createdAt": "2018-07-25T02:52:28.574Z",
+      "user": {
+        "_id": "2",
+        "name": "担当",
+        "avatar": "https://image.flaticon.com/icons/png/128/149/149071.png"
+      },
+      "unread": true
     }
   ],
   "MESSAGE_READ": {}
