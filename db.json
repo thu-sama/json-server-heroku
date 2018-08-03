@@ -26,7 +26,8 @@
       "link": "#6da4c4",
       "addNewContractDescription": "#5a403b",
       "contractDetailButtonText": "#5a403b",
-      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png",
+      "image": "https://www.mplf.net/img/hokendelete/palmTree.jpg"
     }
   },
   "LOGOUT": {},
