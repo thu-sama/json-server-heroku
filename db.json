@@ -26,7 +26,7 @@
       "link": "#6da4c4",
       "addNewContractDescription": "#5a403b",
       "contractDetailButtonText": "#5a403b",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     }
   },
   "LOGOUT": {},
@@ -36,70 +36,70 @@
       "title": "ヒューマン＆アソシエイツ本社",
       "address": "住所：福岡市中央区輝国1-12-18",
       "phone": "092-533-3318",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     },
     {
       "_id": "2",
       "title": "ヒューマン＆アソシエイツ首都圏本部",
       "address": "住所：東京都港区三田 1-4-28 三田国際ビル３ F",
       "phone": "03-3453-5241",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     },
     {
       "_id": "3",
       "title": "ヒューマン＆アソシエイツ鳥栖支店",
       "address": "住所：佐賀県鳥栖市本町1-954-2",
       "phone": "0942-85-9815",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     },
     {
       "_id": "4",
       "title": "保険クリニック福岡天神店",
       "address": "住所：福岡市中央区天神2-3-10",
       "phone": "092-723-0030",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     },
     {
       "_id": "5",
       "title": "ヒューマン＆アソシエイツ北九州支店",
       "address": "住所：北九州市八幡西区下上津役1-19-5　",
       "phone": "093-616-8971",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     },
     {
       "_id": "6",
       "title": "ヒューマン＆アソシエイツ沖縄",
       "address": "住所：沖縄県那覇市上之屋 1-20-9　富士家ビル1F",
       "phone": "098-988-9900",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     },
     {
       "_id": "7",
       "title": "ヒューマン＆アソシエイツ沖縄　石垣支社",
       "address": "住所：沖縄県石垣市字真栄里103-5",
       "phone": "0980-84-2333",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     },
     {
       "_id": "8",
       "title": "ヒューマン＆アソシエイツ沖縄　中部支社",
       "address": "住所：沖縄県うるま市石川　1丁目43－6",
       "phone": "098-989-0797",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     },
     {
       "_id": "9",
       "title": "ヒューマン＆アソシエイツ沖縄　名護支社",
       "address": "住所：沖縄県名護市大西2丁目4-40",
       "phone": "0980-43-9555",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     },
     {
       "_id": "10",
       "title": "ヒューマン＆アソシエイツ沖縄　宮古支社",
       "address": "住所：沖縄県宮古島市平良字下里1068-7",
       "phone": "0980-79-5755",
-      "logo": "https://www.mplf.net/img/1.jpg"
+      "logo": "https://www.mplf.net/img/hokendelete/logo.png"
     }
   ],
   "SET_NOTIFICATION_TOKEN": {},
