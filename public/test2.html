@@ -1,0 +1,361 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <!-- TODO パッケージ内に必要なjQueryを揃えたい！読み込むパスも変更。 -->
+<!-- jQuery -->
+<script type="text/javascript" src="http://192.168.33.10/js/jquery.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/jquery.mask.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/jquery.multiselect.min.js"></script>
+<!--<script type="text/javascript" src="http://192.168.33.10/js/jquery.select-multiple.js"></script>-->
+<script type="text/javascript" src="http://192.168.33.10/js/jquery.ui.multiselect.widget.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/i18n/jquery.ui.datepicker-zh-CN.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/i18n/jquery.ui.datepicker-vi.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/i18n/jquery.ui.datepicker-ja.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/jquery.ketchup.all.min.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/sweet-alert.min.js"></script>
+<!-- jQueryCSS -->
+<link rel="stylesheet" href="http://192.168.33.10/css/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="http://192.168.33.10/css/ui-lightness/jquery-ui-1.9.2.custom.css" type="text/css" />
+<link rel="stylesheet" href="http://192.168.33.10/css/sweet-alert.css" type="text/css" />
+<!-- TimeManagement -->
+<script type="text/javascript" src="http://192.168.33.10/js/common/common.js?v=3.2.0"></script>
+    <link rel="stylesheet" type="text/css" href="http://192.168.33.10/css/common/color_ibs.css?v=3.2.0">
+    <link rel="shortcut icon" type="image/png" href="/images/icons/webclip_postas.png" />
+    <link rel="apple-touch-icon" type="image/png" href="/images/icons/webclip_postas.png" />
+<link rel="stylesheet" type="text/css" href="http://192.168.33.10/css/common/style_common.css?v=3.2.0">
+    <link rel="stylesheet" type="text/css" href="http://192.168.33.10/css/common/style_pc.css?v=3.2.0">
+<link rel="stylesheet" type="text/css" href="http://192.168.33.10/css/common/header.css?v=3.2.0">
+<link rel="stylesheet" type="text/css"
+      href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css?v=3.2.0">
+<!-- <link rel="stylesheet" type="text/css" href="http://192.168.33.10//views/common/css/icon/css/font-awesome.min.css"> -->
+<link rel="stylesheet" type="text/css" href="http://192.168.33.10/css/common/icon/css/icomoon.css?v=3.2.0">
+<script type="text/javascript" src="http://192.168.33.10/js/iscroll.js"></script>
+<script type="text/javascript" src="http://192.168.33.10/js/drawer.js"></script>
+<link rel="stylesheet" type="text/css" href="http://192.168.33.10/css/drawer.css?v=3.2.0">
+<script type="text/javascript" src="http://192.168.33.10/js/dropdown.js"></script>
+<script type="text/javascript">
+    var tmg;
+    var respTyep = 'pc';
+    // create instance of TimeManagement
+    tmg = new TimeManagement("0", respTyep, "http://192.168.33.10/", "3.2.0");
+
+    $(function () {
+        // initialize page
+        tmg.initPage();
+
+        if (tmg.isMobile()) { // mobile
+            $("#dashboard").hide();
+            $("#shift_management").hide();
+            $("#timerecord_agree").hide();
+            $("#expense_apply").hide();
+            $("#expense_approve").hide();
+            $("#timerecord_download").hide();
+            $("#master_user_setting").hide();
+            $("#master_mainte").hide();
+            $("#head_function").hide();
+            $("#policy").hide();
+            $("#company_switching").hide();
+            $("#tutorial").hide();
+            $("#csv_download").hide();
+            $("#store_option").hide();
+            $("#system_operation").hide();
+            $("#master_company_setting").hide();
+        }
+        if (tmg.isSmart()) { // smartphone or tablet でキーボード非表示にしたい項目を追加
+            $(".timepicker").attr('readonly', 'readonly');
+            $(".datepicker_form").attr('readonly', 'readonly');
+            $(".ympicker_form").attr('readonly', 'readonly');
+        }
+        $('.drawer').drawer();
+    });
+</script>
+<title>POS+ TimeRecorder</title>
+    <title>Login</title>
+    <meta name="viewport"
+          content="user-scalable=no,width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="http://192.168.33.10/css/views/login/style.css?v=3.2.0">
+    <script type="text/javascript">
+        // create instance of TimeManagement
+        var tmg = new TimeManagement("0", "mobile", "http://192.168.33.10/", "3.2.0");
+        var def_company_code = '';
+        var def_resp_type = '';
+
+        // ログイン画面 - 言語設定
+        var errorMsg;
+        var errorMsg2;
+        var companyCodeRequired;
+        var userIdRequired;
+        var pwRequired;
+        var inputError;
+        var ok;
+        var loginFailed;
+        var loginAgain;
+        var prohibitionCharacter;
+        var errorLack;
+        var errorUnmatch;
+        var prePassword;
+
+        // Multiple Languages displaying based on device language
+        // デバイスの言語情報を取得し表示言語を切り替える
+        function browserLanguageDetection () {
+            var jpn = {
+                userId: '従業員コード',
+                userName: '従業員名',
+                password_old: 'パスワード',
+                password_new: '新しいパスワード',
+                password_2nd: '新しいパスワード（確認）',
+                btn_update: '更新',
+                btn_cancel: 'キャンセル',
+                errorMsg: '未入力エラー',
+                errorMsg2: 'エラー',
+                errorLack: '入力されていない項目があります',
+                errorUnmatch: '新しいパスワードが一致しません',
+                inputError: '不正文字入力エラー',
+                ok: 'OK',
+                loginFailed: 'ログインに失敗しました',
+                loginAgain: 'パスワードを更新する必要があります',
+                prohibitionCharacter: '\\ \' \" < > @ &は入力しないでください',
+                prePassword: '仮パスワードでログインされました'
+            };
+            var eng = {
+                d_new: 'New Password',
+                passworuserId: 'User ID',
+                userName: 'User Name',
+                password_old: 'Password',
+                password_new: 'New Password',
+                password_2nd: 'New Password (Conf)',
+                btn_update: ' Update',
+                btn_cancel: ' Cancel',
+                errorMsg: 'Required input',
+                errorMsg2: 'Error',
+                errorLack: "There's unfilled field",
+                errorUnmatch: 'Passwords you entered seems different.',
+                inputError: 'Illegal character input error',
+                ok: 'OK',
+                loginFailed: 'Login failed',
+                loginAgain: 'Please update password',
+                prohibitionCharacter: 'Please do not enter \\ \' \" < > @ &',
+                prePassword: 'Login with pre-password'
+            };
+            var browserLanguage = function () {
+                try {
+                    return window.navigator.userLanguage || window.navigator.language || window.navigator.browserLanguage;
+                } catch (e) {
+                    return undefined;
+                }
+            }
+
+            function convertLanguage (lang) {
+                $('#title_password_old').text(lang.password_old);
+                $('#title_password_new').text(lang.password_new);
+                $('#title_password_2nd').text(lang.password_2nd);
+                $('#btn_update').val(lang.btn_update);
+                $('#btn_cancel').val(lang.btn_cancel);
+                ok = lang.ok;
+                errorMsg = lang.errorMsg;
+                errorMsg2 = lang.errorMsg2;
+                inputError = lang.inputError;
+                loginFailed = lang.loginFailed;
+                loginAgain = lang.loginAgain;
+                errorLack = lang.errorLack;
+                errorUnmatch = lang.errorUnmatch;
+                prePassword = lang.prePassword;
+                prohibitionCharacter = lang.prohibitionCharacter;
+            }
+
+            var displayLanguage = jpn;
+            if (browserLanguage() !== "ja") {
+                displayLanguage = eng;
+            }
+            convertLanguage(displayLanguage);
+        }
+
+        function pageBack () {
+            //ページ遷移後にダイアログを開く
+            sessionStorage.setItem('autoOpenStatus', true);
+            window.location.href = '/time_management/c_mypage/init'
+        }
+
+        // Tap Login
+        // ログインボタン押下
+        function update_temp_password () {
+            var pwOld = $('#password_old').val();
+            var pwNew = $('#password_new').val();
+            var pw2nd = $('#password_2nd').val();
+
+            if (pwOld === '' || pwNew === '' || pw2nd === '') {
+                swal({
+                    title: errorMsg,
+                    text: errorLack,
+                    confirmButtonColor: "#37abe1",
+                    confirmButtonText: ok,
+                    closeOnConfirm: true
+                });
+                return;
+            }
+
+            if (pwNew !== pw2nd) {
+                swal({
+                    title: errorMsg2,
+                    text: errorUnmatch,
+                    confirmButtonColor: "#37abe1",
+                    confirmButtonText: ok,
+                    closeOnConfirm: true
+                });
+                return;
+            }
+
+            // 禁則文字チェック
+            var badWords = [
+                "\\",
+                "\'",
+                "\"",
+                "<",
+                ">",
+                "@",
+                "&"
+            ]; //禁止文字の配列
+            var regex = new RegExp(badWords.join("|")); //正規表現オブジェクト
+
+            if (pwOld.match(regex) != null || pwNew.match(regex) != null || pw2nd.match(regex) != null) {
+                swal({
+                    title: inputError,
+                    text: prohibitionCharacter,
+                    confirmButtonColor: "#37abe1",
+                    confirmButtonText: ok,
+                    closeOnConfirm: true
+                });
+                return;
+            }
+
+            // API連携用URLパラメータ切り出し
+            var redirect_uri = '';
+            var service_id = '';
+            var access_token = '';
+            var uriParameter = location.search.substring(1).split('&');
+            for (var i = 0; uriParameter[i]; i++) {
+                var getParameter = uriParameter[i].split('=');
+                if (getParameter[0] == 'redirect_uri') {
+                    redirect_uri = getParameter[1];
+                }
+                if (getParameter[0] == 'service_id') {
+                    service_id = getParameter[1];
+                }
+                if (getParameter[0] == 'access_token') {
+                    access_token = getParameter[1];
+                }
+            }
+                        sessionStorage.setItem('autoOpenStatus', true);
+            
+            document.forms[0].action = 'http://192.168.33.10/time_management/c_login/update_password' + "?resp_type=" + def_resp_type + "&company_code=" + def_company_code + "&redirect_uri=" + redirect_uri + "&service_id=" + service_id + "&access_token=" + access_token;
+            document.forms[0].submit();
+        }
+
+        $(function () {
+            browserLanguageDetection();
+
+            // create instance of TimeManagement
+            var tmg = new TimeManagement("0", "mobile", "http://192.168.33.10/", "3.2.0");
+
+            //最初のinputにfocus
+            $('input[type=text]:first').focus();
+            $('input').bind("keydown", function (e) {
+                var n = $("input").length;
+                if (e.which == 13) {
+                    e.preventDefault();
+                    var nextIndex = $('input').index(this) + 1;
+                    if (nextIndex < n) {
+                        //次のやつにfocus
+                        $('input')[nextIndex].focus();
+                    } else {
+                        //最後のやつなのでログイン処理へ
+                        update_temp_password();
+                    }
+                }
+            });
+
+            $(function () {
+                            });
+        });
+    </script>
+</head>
+<body>
+<form action="http://192.168.33.10/time_management/c_mypage/password_change" name="loginform" method="post" accept-charset="utf-8">
+                                                                                                                        <input type="hidden" name="csrf_name" value="02c68138162fd8e3223c37677178a305" />
+<input type="hidden" id="site_code" name="site_code" value="2" />
+<input type="hidden" id="site_name" name="site_name" value="login" />
+<input type="hidden" id="pre_page" name="pre_page" value="/time_management/c_mypage/init" />
+<input type="hidden" name="li_token" value="">
+<div class="m-login-box" style="background:#f7f7f7; height:100%; padding-top:5%;">
+    <div class="login_main login_width_mobile">
+        <div class="description" style="color:#666; font-size:16px;">
+            <span>パスワード変更</span>
+        </div>
+        <br />
+        <br />
+        <div class="description" style="color:#666;text-align:left;padding-left:50px">
+            <span>従業員コード<span>: manager        </div>
+        <br />
+        <div class="description" style="color:#666;text-align:left;padding-left:50px">
+            <span>従業員名<span>: adfasf dfsafsdf        </div>
+        <br />
+        <br />
+        <div class="m-login-form">
+            <label id="title_password_old" for="password" class="m-label display_label">パスワード</label>
+            <div class="InputAddOn">
+                <input id="password_old"
+                       class="display_text input-login"
+                       type="password"
+                       title="パスワード"
+                       name="password_old"
+                       maxlength="20">
+            </div>
+            <br />
+            <br />
+            <label id="title_password_new" for="password" class="m-label display_label">新しいパスワード</label>
+            <div class="InputAddOn">
+                <input id="password_new"
+                       class="display_text input-login"
+                       type="password"
+                       title="パスワード"
+                       name="password_new"
+                       maxlength="20">
+            </div>
+            <br />
+            <label id="title_password_2nd" for="password" class="m-label display_label">新しいパスワード（確認）</label>
+            <div class="InputAddOn">
+                <input id="password_2nd"
+                       class="display_text input-login"
+                       type="password"
+                       title="パスワード"
+                       name="password_2nd"
+                       maxlength="20">
+            </div>
+            <br />
+            <br />
+                            <input type="button"
+                       id="btn_cancel"
+                       name="btn_cancel"
+                       value="キャンセル"
+                       onClick="pageBack()"
+                       style="width:100px;height:40px;background-color:#E75735;border:1px solid #E75735;color:#FFF;">
+                <input type="button"
+                       id="btn_update"
+                       name="btn_update"
+                       value="更新"
+                       onClick="update_temp_password()"
+                       class="default-bgcolor"
+                       style="width:100px;height:40px;">
+                    </div>
+    </div>
+</div>
+</form>
+</body>
+</html>
+
