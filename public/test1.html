@@ -92,7 +92,7 @@
         <link rel="stylesheet" href="https://st-ptr.postas.asia/css/views/workflow_common/style.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="https://st-ptr.postas.asia/css/common/menu/dropdown-submenu.css">
 </head>
-<body class="drawer drawer--left" style="overflow:auto; cursor: pointer; -webkit-tap-highlight-color: rgba(0,0,0,0);">
+<body class="drawer drawer--left" style="overflow:auto;">
 <div style="height: 100%; overflow: hidden;">
     <!-- HEADER -->
     <div id="incHeader">
@@ -1135,5 +1135,14 @@
     </div>
     </div>
 </div>
+<script>
+  $(document).on('touchstart', 'body', function(e){
+    if($(e.target).hasClass('ui-datepicker-trigger') || $('.ui-datepicker-trigger').has(e.target).length || $(e.target).hasClass('ui-datepicker') || $('.ui-datepicker').has(e.target).length){
+      return;
+    }
+
+    $('.datepicker_form').datepicker('hide');
+  });
+</script>
 </body>
 </html>
