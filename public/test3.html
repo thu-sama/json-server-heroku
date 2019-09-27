@@ -680,7 +680,14 @@
                                         <input id="submit_date_from" type="text"
                                                class="font_s14 datepicker_form form-control calender_border"
                                                name="target_date" maxlength="8"  value=""  readonly="readonly" style="user-select: none;">
-                                        <div class="fromDate text-error"></div>
+                                        <script>
+                                          $(function() {
+                                          $('input[readonly]').on('focus', function(ev) {
+                                            $(this).trigger('blur');
+                                          });
+                                          });
+                                        </script>
+                                        <div class="fromDate text-error">abcd</div>
                                     </td>
                                     <td class="hyphen_column">
                                         <i id="minus_icon" class="fa fa-minus" aria-hidden="true"></i>
