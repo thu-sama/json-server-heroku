@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport"
+      content="user-scalable=yes,width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<!-- jQuery -->
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/jquery.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/jquery.multiselect.min.js"></script>
+<!--<script type="text/javascript" src="https://dev-ptr.postas.asia/js/jquery.select-multiple.js"></script>-->
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/jquery.ui.multiselect.widget.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/i18n/jquery.ui.datepicker-zh-CN.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/i18n/jquery.ui.datepicker-vi.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/i18n/jquery.ui.datepicker-ja.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/jquery.ui.touch-punch.min.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/jquery.ketchup.all.min.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/jquery.tablesorter.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/sweet-alert.min.js"></script>
+
+
+
+<!-- jQueryCSS -->
+<link rel="stylesheet" href="https://dev-ptr.postas.asia/css/jquery-ui.css" type="text/css" />
+<link rel="stylesheet" href="https://dev-ptr.postas.asia/css/ui-lightness/jquery-ui-1.9.2.custom.css" type="text/css" />
+<link rel="stylesheet" href="https://dev-ptr.postas.asia/css/sweet-alert.css" type="text/css" />
+<!-- TimeManagement -->
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/common/common.js?v=3.2.0"></script>
+<link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/common/color_ibs.css?v=3.2.0">
+<link rel="shortcut icon" type="image/png" href="/images/icons/webclip_postas.png" />
+<link rel="apple-touch-icon" type="image/png" href="/images/icons/webclip_postas.png" />
+<link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/common/style_common.css?v=3.2.0">
+<link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/common/style_mobile.css?v=3.2.0">
+<link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/common/header.css?v=3.2.0">
+<link rel="stylesheet" type="text/css"
+      href="//maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css?v=3.2.0">
+<!-- <link rel="stylesheet" type="text/css" href="<= base_url()?>/views/common/css/icon/css/font-awesome.min.css"> -->
+<link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/common/icon/css/icomoon.css?v=3.2.0">
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/iscroll.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/drawer.js"></script>
+<link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/drawer.css?v=3.2.0">
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/dropdown.js"></script>
+<link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/common/custom.css?v=3.2.0">
+<link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/common/style_header_menu.css?v=3.2.0">
+<link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/views/master_mainte/style.css?v=3.2.0">
+<script type="text/javascript">
+    var tmg;
+    var respTyep = 'mobile';
+    // create instance of TimeManagement
+    tmg = new TimeManagement("0", respTyep, "https://dev-ptr.postas.asia/", "3.2.0");
+
+    $(function () {
+        // initialize page
+        tmg.initPage();
+
+        if (tmg.isMobile()) { // mobile
+            $("#dashboard").hide();
+            $("#shift_management").hide();
+            $("#timerecord_agree").hide();
+            $("#expense_apply").hide();
+            $("#expense_approve").hide();
+            $("#timerecord_download").hide();
+            $("#master_user_setting").hide();
+            $("#master_mainte").hide();
+            $("#head_function").hide();
+            $("#policy").hide();
+            $("#company_switching").hide();
+            $("#tutorial").hide();
+            $("#csv_download").hide();
+            $("#store_option").hide();
+            $("#system_operation").hide();
+            $("#master_company_setting").hide();
+        }
+        if (tmg.isSmart()) { // smartphone or tablet でキーボード非表示にしたい項目を追加
+            $(".timepicker").attr('readonly', 'readonly');
+            $(".datepicker_form").attr('readonly', 'readonly');
+            $(".ympicker_form").attr('readonly', 'readonly');
+        }
+        $('.drawer').drawer();
+    });
+</script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/fixed_midashi.js"></script>
+<script type="text/javascript" src="https://dev-ptr.postas.asia/js/views/mypage/mypage_header.js?v=3.2.0"></script>
+<link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/views/mypage/mypage.css?v=3.2.0">
+<title>POS+ TimeRecorder</title>
+        <link rel="stylesheet" href="https://dev-ptr.postas.asia/css/views/workflow_common/style.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://dev-ptr.postas.asia/css/common/menu/dropdown-submenu.css">
+</head>
+<body class="drawer drawer--left" style="overflow:auto;">
+<div style="height: 100%; overflow: hidden;">
+    <!-- HEADER -->
+    <div id="incHeader">
+        <div id="loading" class="loading">
+    <i class="fa fa-spinner fa-spin fa-3x fa-fw"></i>
+    <span class="sr-only">Loading...</span>
+</div>
+<div class="header default-bgcolor" style="border: 0 !important;">
+    <table width="100%" height="100%" style="table-layout:fixed;border-collapse:collapse;color: #fff">
+        <tr>
+            <td width="40%">
+            </td>
+            <td width="20%" align="center" class="header_info">
+                <div style="white-space:nowrap;overflow:hidden;">
+                    <label id="header_title">異動申請</label>
+                </div>
+            </td>
+            <td width="40%" align="right" class="header_info">
+                <div id="mypage_link" style="float:right; margin-top:6px; margin-left:4px; cursol:pointer;">
+                    <i class="fa fa-user-circle fa-2x"></i>
+                </div>
+                                <div style="white-space:nowrap;overflow:hidden;">
+                    <label style="font-size:14px;">PERSOL PROCESS  TECHNOLOGY Co Ltd&nbsp;(inte                                                                                 )</label>
+                </div>
+                                <div style="white-space:nowrap;overflow:hidden;">
+                    <label style="font-size:14px;">thu one</label>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+    </div>
+    <!-- MENU -->
+    <div id="incMenu" style="display:none;">
+        <!-- drawer menu -->
+<header role="banner">
+    <i onclick="" class="drawer-toggle drawer-hamburger fa fa-th-list dropbtn" aria-hidden="true"></i>
+    <nav class="drawer-nav" role="navigation">
+        <ul class="drawer-menu">
+            <div id="topline" class="drawer-item-area" style="height:40px;">
+                <li>
+                    <div class="drawer-menu-item">
+                        <div class="icon-part"></div>
+                        <div class="link-part"></div>
+                    </div>
+                </li>
+            </div>
+                                                            <div id="dashboard" class="drawer-item-area">
+                                <li>
+                                                            <a href="/time_management/c_dashboard/init" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa fa-tachometer" aria-hidden="true"></i>
+                            <label>ダッシュボード</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                                <div id="shift_management" class="drawer-item-area">
+                                <li class="drawer-dropdown">
+                    <a class="drawer-menu-item" href="#"
+                       data-toggle="dropdown" role="button" aria-expanded="false">
+                        <div class="menu-tab">
+                            <i class="fa fa-book" aria-hidden="true"></i>
+                            <label>シフト管理</label><span class="drawer-caret"></span>
+                        </div>
+                    </a>
+                    <ul class="drawer-dropdown-menu">
+                                                                        <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_shift_create/init">シフト作成</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_work_time/mst_work_time_list">パターン設定</a>
+                                                    </li>
+                                                                    </ul>
+                </li>
+                            </div>
+                                                                        <div id="shift_wish_1" class="drawer-item-area">
+                                <li>
+                                                            <a href="/time_management/c_shift_request_mobile/shift_pre_list" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                            <label>シフト申請</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                                                        <div id="shift_pre" class="drawer-item-area">
+                                <li>
+                                                            <a href="/time_management/c_shift/init" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa fa-calendar" aria-hidden="true"></i>
+                            <label>シフト確認</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                                <div id="timerecord_edit" class="drawer-item-area">
+                                <li>
+                                                            <a href="/time_management/c_timerecord/init?mode=edit" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa fa-clock-o" aria-hidden="true"></i>
+                            <label>勤怠申請</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                                <div id="timerecord_agree" class="drawer-item-area">
+                                <li class="drawer-dropdown">
+                    <a class="drawer-menu-item" href="#"
+                       data-toggle="dropdown" role="button" aria-expanded="false">
+                        <div class="menu-tab">
+                            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                            <label>勤怠承認</label><span class="drawer-caret"></span>
+                        </div>
+                    </a>
+                    <ul class="drawer-dropdown-menu">
+                                                                        <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_daily_attendance/init">日別勤怠</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_timerecord/init?mode=agree">従業員別勤怠</a>
+                                                    </li>
+                                                                    </ul>
+                </li>
+                            </div>
+                                                <div id="expense_apply" class="drawer-item-area">
+                                <li>
+                                                            <a href="/time_management/c_expense_apply/init" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa IC_papers" aria-hidden="true"></i>
+                            <label>経費申請</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                                <div id="expense_approve" class="drawer-item-area">
+                                <li>
+                                                            <a href="/time_management/c_expense_approve/init" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa IC_folder-check" aria-hidden="true"></i>
+                            <label>経費承認</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                                <div id="change_submit" class="drawer-item-area">
+                                <li>
+                                                            <a href="/time_management/c_change_submit/index" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa IC_user-edit-solid" aria-hidden="true"></i>
+                            <label>異動申請</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                                <div id="change_approval" class="drawer-item-area">
+                                <li>
+                                                            <a href="/time_management/c_change_approval/index" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa IC_user-check-solid" aria-hidden="true"></i>
+                            <label>異動承認</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                                <div id="timerecord_download" class="drawer-item-area">
+                                <li>
+                                                            <a href="/time_management/c_atd_download/init" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa fa-cloud-download" aria-hidden="true"></i>
+                            <label>ダウンロード</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                                                        <div id="head_function" class="drawer-item-area">
+                                <li>
+                                                            <a href="" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa IC_display" aria-hidden="true"></i>
+                            <label>本部機能</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                                <div id="master_user_setting" class="drawer-item-area">
+                                <li class="drawer-dropdown">
+                    <a class="drawer-menu-item" href="/time_management/c_user_mainte/mst_user_list"
+                       data-toggle="dropdown" role="button" aria-expanded="false">
+                        <div class="menu-tab">
+                            <i class="fa fa-users" aria-hidden="true"></i>
+                            <label>従業員管理</label><span class="drawer-caret"></span>
+                        </div>
+                    </a>
+                    <ul class="drawer-dropdown-menu">
+                                                                        <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_user_mainte/mst_user_list">従業員管理</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_master_mainte/mst_user_salary_list">従業員給与設定</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_user_mainte/show_locked_user">アカウントロック解除</a>
+                                                    </li>
+                                                                    </ul>
+                </li>
+                            </div>
+                                                                        <div id="master_mainte" class="drawer-item-area">
+                                <li class="drawer-dropdown">
+                    <a class="drawer-menu-item" href="#"
+                       data-toggle="dropdown" role="button" aria-expanded="false">
+                        <div class="menu-tab">
+                            <i class="fa IC_home" aria-hidden="true"></i>
+                            <label>店舗管理</label><span class="drawer-caret"></span>
+                        </div>
+                    </a>
+                    <ul class="drawer-dropdown-menu">
+                                                                        <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_store_setting/index">店舗管理</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_settings/init">店舗個別設定</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_store_time_zone/mst_store_time_zone_item">店舗時間帯設定</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_mst_holiday/init">店舗休日設定</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_work_position/mst_work_position_list">作業場所設定</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_budget_manage/init">店舗予算設定</a>
+                                                    </li>
+                                                                    </ul>
+                </li>
+                            </div>
+                                                <div id="store_option" class="drawer-item-area">
+                                <li class="drawer-dropdown">
+                    <a class="drawer-menu-item" href="#"
+                       data-toggle="dropdown" role="button" aria-expanded="false">
+                        <div class="menu-tab">
+                            <i class="fa IC_sliders" aria-hidden="true"></i>
+                            <label>店舗オプション</label><span class="drawer-caret"></span>
+                        </div>
+                    </a>
+                    <ul class="drawer-dropdown-menu">
+                                                                        <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="/time_management/c_store_option/index">オプション管理</a>
+                                                    </li>
+                                                                    </ul>
+                </li>
+                            </div>
+                                                <div id="policy" class="drawer-item-area">
+                                <li>
+                                                            <a class="drawer-menu-item"
+                       href="https://dev-ptr.postas.asia/pdf/policy_persol.pdf" target="_blank">
+                                                <div class="menu-tab">
+                            <i class="fa IC_file-text" aria-hidden="true"></i>
+                            <label>利用規約</label>
+                        </div>
+                                            </a>
+                                    </li>
+                            </div>
+                                                <div id="tutorial" class="drawer-item-area">
+                                <li class="drawer-dropdown">
+                    <a class="drawer-menu-item" href="#"
+                       data-toggle="dropdown" role="button" aria-expanded="false">
+                        <div class="menu-tab">
+                            <i class="fa fa-info-circle" aria-hidden="true"></i>
+                            <label>操作説明</label><span class="drawer-caret"></span>
+                        </div>
+                    </a>
+                    <ul class="drawer-dropdown-menu">
+                                                                        <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="https://dev-ptr.postas.asia/pdf/manual_simple_persol.pdf"
+                               target="_blank">簡易マニュアル</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="https://dev-ptr.postas.asia/pdf/manual_ta_persol.pdf"
+                               target="_blank">勤怠管理編</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="https://dev-ptr.postas.asia/pdf/manual_shift_persol.pdf"
+                               target="_blank">シフト管理編</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="https://dev-ptr.postas.asia/pdf/manual_expense_persol.pdf"
+                               target="_blank">経費申請編</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="https://dev-ptr.postas.asia/pdf/manual_wf_persol.pdf"
+                               target="_blank">ワークフロー編</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="https://dev-ptr.postas.asia/pdf/manual_setting_persol.pdf"
+                               target="_blank">設定編</a>
+                                                    </li>
+                                                                                                <li>
+                                                                                    <a class="drawer-dropdown-menu-item"
+                               href="https://dev-ptr.postas.asia/pdf/manual_app_persol.pdf"
+                               target="_blank">打刻アプリ編</a>
+                                                    </li>
+                                                                    </ul>
+                </li>
+                            </div>
+                                                                        <div id="logout" class="drawer-item-area">
+                                <li>
+                                                            <a href="/time_management/c_login/logout" class="drawer-menu-item">
+                        <div class="menu-tab">
+                            <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            <label>ログアウト</label>
+                        </div>
+                    </a>
+                                    </li>
+                            </div>
+                                </ul>
+    </nav>
+</header>
+    </div>
+    <script type="text/javascript">
+        const multiLang = JSON.parse('{"common":{"lbl_search_store":"\u5e97\u8217\u691c\u7d22","lbl_store_name":"\u5e97\u8217\u540d","btn_self_store":"\u81ea\u5e97\u8217","lbl_search_staff":"\u5f93\u696d\u54e1\u691c\u7d22","btn_search":"\u691c\u7d22","btn_new":"\u65b0\u898f\u4f5c\u6210","btn_confirm":"\u78ba\u5b9a","btn_cancel":"\u30ad\u30e3\u30f3\u30bb\u30eb","btn_save":"\u4fdd\u5b58","btn_copy":"\u8907\u88fd","btn_submit":"\u7533\u8acb","btn_delete":"\u524a\u9664","lbl_delete":"\u524a\u9664","btn_add":"\u8ffd\u52a0","btn_download":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9","lbl_cal_su":"\u65e5","lbl_cal_mo":"\u6708","lbl_cal_tu":"\u706b","lbl_cal_we":"\u6c34","lbl_cal_th":"\u6728","lbl_cal_fr":"\u91d1","lbl_cal_sa":"\u571f","lbl_cal_sun":"\u65e5\u66dc","lbl_cal_mon":"\u6708\u66dc","lbl_cal_tue":"\u706b\u66dc","lbl_cal_wed":"\u6c34\u66dc","lbl_cal_thu":"\u6728\u66dc","lbl_cal_fri":"\u91d1\u66dc","lbl_cal_sat":"\u571f\u66dc","lbl_cal_sunday":"\u65e5\u66dc\u65e5","lbl_cal_monday":"\u6708\u66dc\u65e5","lbl_cal_tueday":"\u706b\u66dc\u65e5","lbl_cal_wednesday":"\u6c34\u66dc\u65e5","lbl_cal_thursday":"\u6728\u66dc\u65e5","lbl_cal_friday":"\u91d1\u66dc\u65e5","lbl_cal_saturday":"\u571f\u66dc\u65e5","alt_delete":"\u524a\u9664\u3057\u3066\u3082\u3088\u308d\u3057\u3044\u3067\u3057\u3087\u3046\u304b\uff1f","alt_no_change":"\u5909\u66f4\u7b87\u6240\u304c\u3042\u308a\u307e\u305b\u3093","alt_no_check":"\u9078\u629e\u3055\u308c\u3066\u3044\u307e\u305b\u3093","alt_confirm":"\u767b\u9332\u3057\u307e\u3059\u304b\uff1f","alt_registration_complete":"\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f","alt_failed_registe":"\u767b\u9332\u306b\u5931\u6557\u3057\u307e\u3057\u305f","alt_view_back":"\u5909\u66f4\u3092\u7834\u68c4\u3057\u3066\u5143\u306e\u753b\u9762\u306b\u623b\u308a\u307e\u3059\u304b\uff1f","lbl_sort":"\u4e26\u3073\u9806","lbl_edit":"\u7de8\u96c6","lbl_month_jan":"1\u6708","lbl_month_feb":"2\u6708","lbl_month_mar":"3\u6708","lbl_month_apr":"4\u6708","lbl_month_may":"5\u6708","lbl_month_jun":"6\u6708","lbl_month_jul":"7\u6708","lbl_month_aug":"8\u6708","lbl_month_sep":"9\u6708","lbl_month_oct":"10\u6708","lbl_month_nov":"11\u6708","lbl_month_dec":"12\u6708","lbl_day_off":"\u4f11\u65e5","lbl_statutory_holiday":"\u6240\u5b9a\u4f11\u65e5","lbl_legal_holiday":"\u6cd5\u5b9a\u4f11\u65e5","lbl_paid_vacation":"\u6709\u7d66","lbl_half_day_off":"\u534a\u4f11","lbl_sp_holiday":"\u7279\u5225\u4f11\u6687","msg_extrar_pay_description":"\u4e88\u6e2c\u4eba\u4ef6\u8cbb\u306b\u95a2\u3059\u308b\u5272\u5897\u306f\u4ee5\u4e0b\u3068\u306a\u308a\u307e\u3059<br>\u30fb\u6df1\u591c\u5272\u5897\uff1a22\u6642\u301c\u7fcc5\u6642\u307e\u3067\u306e\u52b4\u50cd\u6642\u9593<br>\u30fb\u6b8b\u696d\u5272\u5897\uff1a\u30b7\u30d5\u30c8\u3054\u3068\u306b8\u6642\u9593\u3092\u8d85\u3048\u305f\u52b4\u50cd\u6642\u9593<br>\u30fb\u4f11\u65e5\u5272\u5897\uff1a\u5e97\u8217\u8a2d\u5b9a\u306b\u5247\u3063\u305f\u4f11\u65e5\u8a2d\u5b9a","lbl_req_all_day":"\u7d42\u65e5\u5e0c\u671b","lbl_req_time_specified":"\u6642\u9593\u6307\u5b9a","lbl_theoretical_labor_cost":"\u4e88\u6e2c\u4eba\u4ef6\u8cbb","lbl_note":"\u5099\u8003","lbl_status":"\u72b6\u614b","lbl_staff_name":"\u5f93\u696d\u54e1\u540d","lbl_work_time":"\u52e4\u52d9\u6642\u9593","lbl_work_position":"\u4f5c\u696d\u5834\u6240","lbl_shift_name":"\u30b7\u30d5\u30c8\u540d\u79f0","btn_detail":"\u8a73\u7d30","lbl_start":"\u958b\u59cb","lbl_end":"\u7d42\u4e86","lbl_year":"\u5e74","lbl_month":"\u6708","lbl_day":"\u65e5","lbl_week_day":"\u66dc\u65e5","lbl_date":"\u65e5\u4ed8","lbl_store":"\u5e97\u8217","lbl_name":"\u540d\u79f0","lbl_user_id":"ID","btn_contract":"\u96c7\u7528\u5951\u7d04","lbl_company_name":"\u4f01\u696d\u540d","lbl_break":"\u4f11\u61a9","lbl_user_employment":"\u96c7\u7528\u5f62\u614b","lbl_staff_id":"\u5f93\u696d\u54e1ID","lbl_company_code":"\u4f01\u696d\u30b3\u30fc\u30c9","lbl_store_code":"\u5e97\u8217\u30b3\u30fc\u30c9","lbl_validity_period":"\u6709\u52b9\u671f\u9593","lbl_validity_start":"\u6709\u52b9\u671f\u9593\u958b\u59cb\u65e5","lbl_validity_end":"\u6709\u52b9\u671f\u9593\u7d42\u4e86\u65e5","lbl_working_system":"\u52b4\u50cd\u6642\u9593\u5236","lbl_amount":"\u91d1\u984d","lbl_tell_1":"\u96fb\u8a71\u756a\u53f7\uff11","lbl_tell_2":"\u96fb\u8a71\u756a\u53f7\uff12","lbl_fax":"FAX","lbl_e_mail":"\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9","lbl_allowance":"\u624b\u5f53","lbl_deduction":"\u63a7\u9664","lbl_default_select":"--select--","lbl_num":"No.","lbl_postal_code":"\u90f5\u4fbf\u756a\u53f7","lbl_address_1":"\u4f4f\u6240\uff11","lbl_address_2":"\u4f4f\u6240\uff12","lbl_address_3":"\u4f4f\u6240\uff13","lbl_language":"\u8a00\u8a9e","lbl_area":"\u5730\u57df","lbl_user_belong_store":"\u6240\u5c5e\u5e97\u8217","lbl_fixed_working_day":"\u6240\u5b9a\u52b4\u50cd\u65e5\u6570(\u6708\u5e73\u5747)","lbl_fixed_working_time_monthly":"\u6240\u5b9a\u52b4\u50cd\u6642\u9593(\u6708\u5e73\u5747)","lbl_bank_code":"\u9280\u884c\u30b3\u30fc\u30c9","lbl_branch_code":"\u652f\u5e97\u30b3\u30fc\u30c9","lbl_key_word":"\u30d5\u30ea\u30fc\u30ef\u30fc\u30c9","lbl_today":"\u4eca\u65e5","lbl_operation_management":"\u904b\u7528\u7ba1\u7406","lbl_dashboard":"\u30c0\u30c3\u30b7\u30e5\u30dc\u30fc\u30c9","lbl_shift_conf":"\u30b7\u30d5\u30c8\u78ba\u8a8d","lbl_shift_req":"\u30b7\u30d5\u30c8\u7533\u8acb","lbl_ta_req":"\u52e4\u6020\u7533\u8acb","lbl_ta_approve":"\u52e4\u6020\u627f\u8a8d","lbl_store_manage":"\u5e97\u8217\u7ba1\u7406","lbl_head_function":"\u672c\u90e8\u6a5f\u80fd","lbl_company_switch":"\u4f01\u696d\u5207\u66ff","lbl_download":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9","lbl_term":"\u5229\u7528\u898f\u7d04","lbl_manual":"\u64cd\u4f5c\u8aac\u660e","lbl_manual_ta":"\u52e4\u6020\u7ba1\u7406\u7de8","lbl_manual_ma":"\u30b7\u30d5\u30c8\u7ba1\u7406\u7de8","lbl_manual_st":"\u8a2d\u5b9a\u7de8","lbl_logout":"\u30ed\u30b0\u30a2\u30a6\u30c8","lbl_store_base":"\u5e97\u8217\u500b\u5225\u8a2d\u5b9a","lbl_store_holiday":"\u5e97\u8217\u4f11\u65e5\u8a2d\u5b9a","lbl_store_work_position":"\u4f5c\u696d\u5834\u6240\u8a2d\u5b9a","lbl_salary_allow":"\u624b\u5f53\u63a7\u9664\u8a2d\u5b9a","lbl_user_manage":"\u5f93\u696d\u54e1\u7ba1\u7406","lbl_user_list":"\u5f93\u696d\u54e1\u60c5\u5831","lbl_user_salary_manage":"\u5f93\u696d\u54e1\u7d66\u4e0e\u8a2d\u5b9a","lbl_user_contract":"\u96c7\u7528\u5951\u7d04","lbl_shift_manage":"\u30b7\u30d5\u30c8\u7ba1\u7406","lbl_shift_planning":"\u30b7\u30d5\u30c8\u4f5c\u6210","lbl_shift_time_pattern":"\u30d1\u30bf\u30fc\u30f3\u8a2d\u5b9a","lbl_shift_store_template":"\u4eba\u6570\u30fb\u67a0\u8a2d\u5b9a","lbl_shift_store_request":"\u5e97\u8217\u30b7\u30d5\u30c8\u5272\u5f53\u8a2d\u5b9a","lbl_shift_conf_staff":"\u5f93\u696d\u54e1\u5225\u30b7\u30d5\u30c8","lbl_shift_conf_daily":"\u65e5\u5225\u30b7\u30d5\u30c8","lbl_ta_daily":"\u65e5\u5225\u52e4\u6020","lbl_ta_staff":"\u5f93\u696d\u54e1\u5225\u52e4\u6020","lbl_data_export":"\u30c7\u30fc\u30bf\u62bd\u51fa","lbl_export_pca":"PCA","lbl_export_contract":"\u96c7\u7528\u5951\u7d04\u51fa\u529b","lbl_account_lock":"\u30a2\u30ab\u30a6\u30f3\u30c8\u30ed\u30c3\u30af\u89e3\u9664","lbl_company_manage":"\u4f01\u696d\u8a2d\u5b9a","lbl_company_basic_setting":"\u4f01\u696d\u57fa\u672c\u8a2d\u5b9a","lbl_country_manage":"\u56fd\u30fb\u5730\u57df\u8a2d\u5b9a","lbl_company_time_setting":"\u4f01\u696d\u6642\u9593\u5e2f\u9805\u76ee\u8a2d\u5b9a","lbl_company_al":"\u6709\u7d66\u4ed8\u4e0e\u8a2d\u5b9a","lbl_company_vacation":"\u4f11\u6687\u8a2d\u5b9a\u4e00\u89a7","lbl_store_time_setting":"\u5e97\u8217\u6642\u9593\u5e2f\u8a2d\u5b9a","lbl_store_budget":"\u5e97\u8217\u4e88\u7b97\u8a2d\u5b9a","lbl_store_option":"\u5e97\u8217\u30aa\u30d7\u30b7\u30e7\u30f3","lbl_option_manage":"\u30aa\u30d7\u30b7\u30e7\u30f3\u7ba1\u7406","lbl_invoice_manage":"\u8acb\u6c42\u7ba1\u7406","lbl_system_notification":"\u304a\u77e5\u3089\u305b\u8a2d\u5b9a","alt_failed_search":"\u691c\u7d22\u306b\u5931\u6557\u3057\u307e\u3057\u305f","lbl_auth_manage":"\u6a29\u9650\u7ba1\u7406","lbl_store_group":"\u5e97\u8217\u30b0\u30eb\u30fc\u30d7\u7ba1\u7406","lbl_approve_status":"\u65e5\u5225\u627f\u8a8d\u72b6\u6cc1","lbl_ta_close":"\u52e4\u6020\u6708\u7de0\u3081","lbl_expense_apply":"\u7d4c\u8cbb\u7533\u8acb","lbl_expense_approve":"\u7d4c\u8cbb\u627f\u8a8d","alt_failed_update":"\u66f4\u65b0\u306b\u5931\u6557\u3057\u307e\u3057\u305f","btn_regist":"\u767b\u9332","lbl_no_data":"\u30c7\u30fc\u30bf\u304c\u3042\u308a\u307e\u305b\u3093","lbl_regist":"\u767b\u9332","alt_delete_complete":"\u524a\u9664\u304c\u5b8c\u4e86\u3044\u305f\u3057\u307e\u3057\u305f","btn_check":"\u78ba\u8a8d","btn_reset":"\u521d\u671f\u5316","vld_max_length":"\u6700\u5927\u6587\u5b57\u6570","lbl_select_all":"\u5168\u9078\u629e","lbl_done":"\u5b8c\u4e86","lbl_month_jan_short":"1\u6708","lbl_month_feb_short":"2\u6708","lbl_month_mar_short":"3\u6708","lbl_month_apr_short":"4\u6708","lbl_month_may_short":"5\u6708","lbl_month_jun_short":"6\u6708","lbl_month_jul_short":"7\u6708","lbl_month_aug_short":"8\u6708","lbl_month_sep_short":"9\u6708","lbl_month_oct_short":"10\u6708","lbl_month_nov_short":"11\u6708","lbl_month_dec_short":"12\u6708","lbl_cal_cus_done_text":"\u9589\u3058\u308b","lbl_cal_cus_prev_text":"&#x3C;\u524d","lbl_cal_cus_next_text":"\u6b21&#x3E;","lbl_cal_cus_su_short":"\u65e5","lbl_cal_cus_mo_short":"\u6708","lbl_cal_cus_tu_short":"\u706b","lbl_cal_cus_we_short":"\u6c34","lbl_cal_cus_th_short":"\u6728","lbl_cal_cus_fr_short":"\u91d1","lbl_cal_cus_sa_short":"\u571f","lbl_cal_cus_year":"\u5e74","lbl_cal_cus_week":"\u9031","alt_illegal_transition":"\u4e0d\u6b63\u306a\u9077\u79fb\u304c\u884c\u308f\u308c\u307e\u3057\u305f","lbl_password_flg":"\u4eee\u30d1\u30b9\u30ef\u30fc\u30c9\u30d5\u30e9\u30b0","lbl_minute":"\u5206","lbl_hour":"\u6642\u9593","alt_update_complete":"\u66f4\u65b0\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f","lbl_mypage":"\u30de\u30a4\u30da\u30fc\u30b8","msg_unable_edit":"\u4f01\u696d\u5207\u308a\u66ff\u3048\u6642\u306f\u30de\u30a4\u30da\u30fc\u30b8\u304b\u3089\u60c5\u5831\u3092<br>\u7de8\u96c6\u3059\u308b\u3053\u3068\u306f\u3067\u304d\u307e\u305b\u3093","lbl_profile":"\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb","btn_pass_change":"\u30d1\u30b9\u30ef\u30fc\u30c9\u5909\u66f4","lbl_employee_num":"\u793e\u54e1\u756a\u53f7","lbl_user_name":"\u540d\u524d","lbl_user_name_kana":"\u30d5\u30ea\u30ac\u30ca","lbl_birthday":"\u751f\u5e74\u6708\u65e5","lbl_gender":"\u6027\u5225","lbl_male":"\u7537\u6027","lbl_female":"\u5973\u6027","lbl_n_a":"\u672a\u8a2d\u5b9a","lbl_mail_1":"\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b91","lbl_mail_2":"\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b92","lbl_more":"\u3082\u3063\u3068\u307f\u308b","lbl_less":"\u9589\u3058\u308b","lbl_salary_info":"\u7d66\u4e0e\u60c5\u5831","lbl_remain_paid_holiday":"\u6709\u7d66\u6b8b\u65e5\u6570","lbl_days":"\u65e5","lbl_service_length":"\u5728\u7c4d\u5e74\u6570","lbl_years":"\u5e74","lbl_salary":"\u7d66\u4e0e","lbl_entrance_date":"\u5165\u793e\u5e74\u6708\u65e5","lbl_personal_info":"\u500b\u4eba\u60c5\u5831","btn_wf":"\u30ef\u30fc\u30af\u30d5\u30ed\u30fc","lbl_resident_address":"\u4f4f\u6c11\u7968\u4f4f\u6240","lbl_address":"\u4f4f\u6240","lbl_commute_route":"\u901a\u52e4\u7d4c\u8def","lbl_line":"\u8def\u7dda\u540d","lbl_station":"\u6700\u5bc4\u99c5","lbl_parking_lot":"\u99d0\u8f2a\u5834\u540d","lbl_route_1":"\u7d4c\u8def\uff11","lbl_route_2":"\u7d4c\u8def2","lbl_route_3":"\u7d4c\u8def3","lbl_emergency_contact":"\u7dca\u6025\u9023\u7d61\u5148","lbl_relationship":"\u7d9a\u67c4","lbl_tell":"\u96fb\u8a71\u756a\u53f7","lbl_payment":"\u7d66\u4e0e\u652f\u6255\u3044\u5148","lbl_bank_classification":"\u53d6\u6271\u533a\u5206","lbl_sign":"\u8a18\u53f7","lbl_holder":"\u53e3\u5ea7\u540d\u7fa9","lbl_number":"\u756a\u53f7","lbl_bank_name":"\u9280\u884c\u540d","lbl_bank_branch":"\u9280\u884c\u30fb\u652f\u5e97\u30b3\u30fc\u30c9","lbl_account_type":"\u53e3\u5ea7\u7a2e\u5225","lbl_save":"\u666e\u901a","lbl_check":"\u5f53\u5ea7","lbl_account_num":"\u53e3\u5ea7\u756a\u53f7","lbl_monthly_amount":"\u6708\u984d","lbl_daily_amount":"\u65e5\u984d","lbl_transportation_fee":"\u4ea4\u901a\u8cbb","lbl_fix_time":"\u56fa\u5b9a\u6642\u9593","lbl_valiable_monthly":"\u5909\u5f62\u52b4\u50cd(\u6708\u5358\u4f4d)","lbl_valiable_monthly_time":"\u5909\u5f62\u52b4\u50cd(\u6708\u5358\u4f4d)(\u6642\u9593\u5236)","lbl_flex":"\u30d5\u30ec\u30c3\u30af\u30b9\u30bf\u30a4\u30e0","lbl_discretionary":"\u88c1\u91cf\u52b4\u50cd","lbl_variable_month_shift":"\u5909\u5f62\u52b4\u50cd(\u6708\u5358\u4f4d)(\u30b7\u30d5\u30c8\u5236)","lbl_monthly_salary":"\u6708\u7d66","lbl_daily_wage":"\u65e5\u7d66","lbl_hourly_wage":"\u6642\u7d66","lbl_hourly_wage_time_zone":"\u6642\u9593\u5e2f\u5225\u6642\u7d66","lbl_regular_emp":"\u793e\u54e1","lbl_contract_emp":"\u5951\u7d04\u793e\u54e1","lbl_part_timer":"\u30d1\u30fc\u30c8","lbl_bank":"\u9280\u884c","lbl_post_bank":"\u3086\u3046\u3061\u3087","lbl_train":"\u96fb\u8eca","lbl_bus":"\u30d0\u30b9","lbl_other":"\u305d\u306e\u4ed6","lbl_relationship_01":"\u914d\u5076\u8005","lbl_relationship_02":"\u5b50","lbl_relationship_03":"\u7236","lbl_relationship_04":"\u6bcd","lbl_relationship_05":"\u7fa9\u7236","lbl_relationship_06":"\u7fa9\u6bcd","lbl_relationship_07":"\u7956\u7236","lbl_relationship_08":"\u7956\u6bcd","lbl_relationship_09":"\u5b6b","lbl_relationship_10":"\u5144","lbl_relationship_11":"\u59c9","lbl_relationship_12":"\u5f1f","lbl_relationship_13":"\u59b9","lbl_relationship_14":"\u7fa9\u5144","lbl_relationship_15":"\u7fa9\u59c9","lbl_relationship_16":"\u7fa9\u5f1f","lbl_relationship_17":"\u7fa9\u59b9","lbl_relationship_18":"\u4f2f\u7236","lbl_relationship_19":"\u4f2f\u6bcd","lbl_relationship_20":"\u53d4\u7236","lbl_relationship_21":"\u53d4\u6bcd","lbl_relationship_22":"\u7525","lbl_relationship_23":"\u59ea","lbl_relationship_24":"\u305d\u306e\u4ed6","lbl_full":"\u6e80","lbl_months":"\u304b\u6708","lbl_change_personal_info":"\u500b\u4eba\u60c5\u5831\u7570\u52d5\u7533\u8acb","lbl_change_submit":"\u7570\u52d5\u7533\u8acb","lbl_change_approval":"\u7570\u52d5\u627f\u8a8d","lbl_approval_route":"\u627f\u8a8d\u7d4c\u8def\u8a2d\u5b9a","lbl_required":"\uff1c\u5fc5\u9808\uff1e","lbl_user_list_base":"\u57fa\u672c","lbl_user_list_detail":"\u8a73\u7d30","lbl_user_list_allowance":"\u7d66\u4e0e","lbl_user_list_contract":"\u96c7\u7528\u5951\u7d04","lbl_user_list_family":"\u5bb6\u65cf","btn_download_reservation":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u4e88\u7d04","btn_file_list":"\u30d5\u30a1\u30a4\u30eb\u4e00\u89a7","lbl_download_file_list":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u53ef\u80fd\u30d5\u30a1\u30a4\u30eb\u4e00\u89a7","alt_failed_get_file_list":"\u30d5\u30a1\u30a4\u30eb\u4e00\u89a7\u304c\u53d6\u5f97\u3067\u304d\u307e\u305b\u3093\u3067\u3057\u305f","msg_no_file":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u53ef\u80fd\u306a\u30d5\u30a1\u30a4\u30eb\u304c\u3042\u308a\u307e\u305b\u3093","lbl_export_dcs_csv":"DCS\u7528CSV\u30d5\u30a1\u30a4\u30eb\u51fa\u529b","alt_reserved_download":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u4e88\u7d04\u6e08\u307f\u3067\u3059","lbl_history":"\u5c65\u6b74","alt_typing_error":"\u5165\u529b\u9805\u76ee\u306b\u8aa4\u308a\u304c\u3042\u308a\u307e\u3059","lbl_target_staff":"\u5bfe\u8c61\u306e\u5f93\u696d\u54e1","lbl_manual_ex":"\u7d4c\u8cbb\u7533\u8acb\u7de8","lbl_manual_app":"\u6253\u523b\u30a2\u30d7\u30ea\u7de8","lbl_manual_sim":"\u7c21\u6613\u30de\u30cb\u30e5\u30a2\u30eb","lbl_manual_wf":"\u30ef\u30fc\u30af\u30d5\u30ed\u30fc\u7de8","lbl_manual_csv":"\u5f93\u696d\u54e1CSV\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u7de8","lbl_exchange_use_days":"\u4ee3\u4f11","lbl_exchange_remaining_days":"\u4ee3\u4f11\u6b8b\u65e5\u6570","lbl_service_cost_table":"\u30b5\u30fc\u30d3\u30b9\u539f\u4fa1\u8a08\u753b\u8868","btn_new_submit":"\u65b0\u898f\u7533\u8acb","alt_unexpected_error":"\u4e88\u671f\u305b\u306c\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f","lbl_employee_promotion_date":"\u6b63\u793e\u54e1\u96c7\u7528\u65e5","form_validation_required":"\u6b04\u306f\u5fc5\u9808\u30d5\u30a3\u30fc\u30eb\u30c9\u3067\u3059","form_validation_isset":"\u6b04\u306f\u5024\u304c\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_valid_email":"\u6b04\u306f\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u3068\u3057\u3066\u6b63\u3057\u3044\u5f62\u5f0f\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_valid_emails":"\u6b04\u306f\u6b63\u3057\u3044\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_valid_url":"\u6b04\u306f\u6b63\u3057\u3044URL\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_valid_ip":"\u6b04\u306f\u6b63\u3057\u3044IP\u30a2\u30c9\u30ec\u30b9\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_max_length_first":"\u6b04\u306f","form_validation_max_length":"\u6587\u5b57\u4ee5\u4e0b\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_min_length":"\u6587\u5b57\u4ee5\u4e0a\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_prm_differs":"\u6b04\u3068\u540c\u3058\u3067\u306f\u3044\u3051\u307e\u305b\u3093","form_validation_exact_length":"\u6b04\u306f{param}\u6587\u5b57\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_alpha":"\u6b04\u306f\u82f1\u5b57\u3060\u3051\u3067\u3059","form_validation_alpha_numeric":"\u6b04\u306f\u82f1\u6570\u5b57\u306e\u307f\u3067\u3059","form_validation_alpha_numeric_spaces":"\u6b04\u306f\u82f1\u6570\u5b57\u304b\u30b9\u30da\u30fc\u30b9\u306e\u307f\u3067\u3059","form_validation_alpha_dash":"\u6b04\u306f\u82f1\u6570\u5b57\u3001_(\u30a2\u30f3\u30c0\u30fc\u30b9\u30b3\u30a2)\u3001\u3082\u3057\u304f\u306f-(\u30cf\u30a4\u30d5\u30f3)\u306e\u307f\u3067\u3059","form_validation_numeric":"\u6b04\u306f\u6570\u5b57\u306e\u307f\u3067\u3059","form_validation_is_numeric":"\u6b04\u306f\u6570\u5b57\u306e\u307f\u3067\u3059","form_validation_integer":"\u6b04\u306f\u6574\u6570\u306e\u307f\u3067\u3059","form_validation_regex_match":"\u6b04\u306f\u6b63\u3057\u3044\u5f62\u5f0f\u3067\u306f\u3042\u308a\u307e\u305b\u3093","form_validation_matches":"\u6b04\u304c {param}\u6b04\u3068\u540c\u3058\u3067\u306f\u3042\u308a\u307e\u305b\u3093","form_validation_differs":"\u6b04\u306f{param}\u6b04\u3068\u540c\u3058\u3067\u306f\u3044\u3051\u307e\u305b\u3093","form_validation_is_unique":"\u6b04\u306f\u30e6\u30cb\u30fc\u30af\u306a\u5024\u3067\u306a\u3051\u308c\u3070\u306a\u308a\u307e\u305b\u3093","form_validation_is_natural":"\u6b04\u306f\u6570\u5024\u3060\u3051\u3067\u3059\u3002","form_validation_is_natural_no_zero":"\u6b04\u306f\u30bc\u30ed\u3088\u308a\u5927\u304d\u3044\u6570\u5024\u306e\u307f\u3067\u3059\u3002","form_validation_decimal":"\u6b04\u306f10\u9032\u6570\u306e\u307f\u3067\u3059\u3002","form_validation_less_than":"\u6b04\u306f{param}\u3088\u308a\u5c0f\u3055\u3044\u5024\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093\u3002","form_validation_less_than_equal_to":"\u6b04\u306f{param}\u4ee5\u4e0b\u306e\u5024\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093\u3002","form_validation_greater_than":"\u6b04\u306f{param}\u3088\u308a\u5927\u304d\u3044\u5024\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093\u3002","form_validation_greater_than_equal_to":"\u6b04\u306f{param}\u4ee5\u4e0a\u306e\u5024\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093\u3002","form_validation_error_message_not_set":"\u6b04\u306b\u9069\u5207\u306a\u30a8\u30e9\u30fc\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u3042\u308a\u307e\u305b\u3093","form_validation_error_message_not_size_match":"\u6841\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_same_value":"\u540c\u3058\u5024\u306f\u8a2d\u5b9a\u51fa\u6765\u307e\u305b\u3093\u3002","form_validation_date_valid_value":"\u958b\u59cb\u65e5\u3068\u7d42\u4e86\u65e5\u304c\u4e0d\u6b63\u3067\u3059\u3002","form_validation_half_char":"\u306f\u534a\u89d2\u82f1\u6570\u5b57\u3001\u8a18\u53f7\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_greater_equal_date":" \u306f\u3001{param} \u3088\u308a\u4ee5\u524d\u306e\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_less_time":" \u306f\u3001{param} \u3088\u308a\u524d\u306e\u6642\u9593\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_greater_time":" \u306f\u3001{param} \u3088\u308a\u5f8c\u306e\u6642\u9593\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_valid_date":" \u306b\u6b63\u3057\u3044\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_alpha_numeric_mix":" \u306f\u3001\u534a\u89d2\u82f1\u6570\u6587\u5b57\u3092\u7d44\u307f\u5408\u308f\u305b\u3066\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_check_illegal_characters":"\u306b\u7981\u5247\u6587\u5b57\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_check_only_kana":"%s \u306f\u30ab\u30bf\u30ab\u30ca\u306e\u307f\u3067\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_edit_unique":" \u30d5\u30a3\u30fc\u30eb\u30c9\u304c\u4f7f\u308f\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_is_store_unique":" \u30d5\u30a3\u30fc\u30eb\u30c9\u304c\u4f7f\u308f\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_numeric_minus":" \u30d5\u30a3\u30fc\u30eb\u30c9\u304c\u6570\u91cf\u307e\u305f\u306f\u30de\u30a4\u30ca\u30b9\u3060\u3051\u3067\u3059\u3002","form_validation_valid_format_Ym":" \u306f\u4e0d\u6b63\u306a\u5024\u3067\u3059\u3002","form_validation_valid_min_and_max_year":" \u306f\u4e0d\u6b63\u306a\u5024\u3067\u3059\u3002","form_validation_valid_phone_character_set":" \u306f\u6570\u5b57\u306e\u307f\u3067\u3059\u3002 .\u3001 -\u3001 +\u3001 (\u3001 ) \u53ca\u3073\u30b9\u30da\u30fc\u30b9\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_check_illegal_characters_sp":"\u306b\u7981\u5247\u6587\u5b57\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_check_illegal_characters_special":"\u306b\u7981\u5247\u6587\u5b57\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_is_positive_number":"\u5024\u6bb5\u306f\u6b63\u6570\u3067\u3042\u308b\u3002","form_validation_check_foreign_key":"\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b \u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093","form_validation_check_allow_value":" \u304c[{param}]\u306e\u5024\u306e\u307f\u3092\u3082\u3089\u3048\u307e\u3059","form_validation_is_max_repeating":"\u540c\u3058\u6570\u304c\u7d99\u7d9a\u306e{param}\u56de\u4ee5\u4e0a\u91cd\u8907\u3067\u304d\u307e\u305b\u3093\u3002","form_validation_is_same_user_id_and_pass":"\u30d1\u30b9\u30ef\u30fc\u30c9\u306fUser ID\u3068\u7570\u306a\u308a\u307e\u3059\u3002","form_validation_in_numeric_range":"\u30d5\u30a3\u30fc\u30eb\u30c9\u306b\u306f\u3001{param}\u306e\u6570\u5024\u3092\u542b\u3081\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059","form_validation_valid_format_year_month":" \u306f\u4e0d\u6b63\u306a\u5024\u3067\u3059\u3002","form_validation_mail_exist":"{field}\u3068\u91cd\u8907\u3057\u305f\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u304c\u767b\u9332\u3055\u308c\u3066\u3044\u307e\u3059","check_kana":"\u6b04\u306f\u534a\u89d2\u30ab\u30ca\u3067\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","check_num":"\u6b04\u306f\u534a\u89d2\u6570\u5b57\u3067\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","alt_no_search_result":"\u691c\u7d22\u7d50\u679c\u304c\u3042\u308a\u307e\u305b\u3093\u3002","alt_file_select":"2MB\u672a\u6e80\u306e\u753b\u50cf\u30c7\u30fc\u30bf\u3092\u9078\u629e\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u5229\u7528\u3067\u304d\u308b\u306e\u306fjpg, jpeg, png\u306e\u307f\u3067\u3059","alt_fail_upload_img":"\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb\u753b\u50cf\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u306b\u5931\u6557\u3057\u307e\u3057\u305f","lbl_stage":"\u30b9\u30c6\u30fc\u30b8","form_validation_less_equal_date":"{field} \u306f\u3001{param} \u4ee5\u964d\u306e\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","alt_date_invalid":"\u691c\u7d22\u671f\u9593\u3092\u6b63\u3057\u304f\u8a2d\u5b9a\u3057\u304f\u3060\u3055\u3044\u3002\u4e0d\u6b63\u306a\u6587\u5b57\u304c\u542b\u307e\u308c\u3066\u304a\u308a\u307e\u3059\u3002","lbl_comment":"\u30b3\u30e1\u30f3\u30c8","lbl_fromDate":"\u958b\u59cb\u65e5","lbl_toDate":"\u7d42\u4e86\u65e5"},"base":{"common":{"lbl_search_store":"\u5e97\u8217\u691c\u7d22","lbl_store_name":"\u5e97\u8217\u540d","btn_self_store":"\u81ea\u5e97\u8217","lbl_search_staff":"\u5f93\u696d\u54e1\u691c\u7d22","btn_search":"\u691c\u7d22","btn_new":"\u65b0\u898f\u4f5c\u6210","btn_confirm":"\u78ba\u5b9a","btn_cancel":"\u30ad\u30e3\u30f3\u30bb\u30eb","btn_save":"\u4fdd\u5b58","btn_copy":"\u8907\u88fd","btn_submit":"\u7533\u8acb","btn_delete":"\u524a\u9664","lbl_delete":"\u524a\u9664","btn_add":"\u8ffd\u52a0","btn_download":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9","lbl_cal_su":"\u65e5","lbl_cal_mo":"\u6708","lbl_cal_tu":"\u706b","lbl_cal_we":"\u6c34","lbl_cal_th":"\u6728","lbl_cal_fr":"\u91d1","lbl_cal_sa":"\u571f","lbl_cal_sun":"\u65e5\u66dc","lbl_cal_mon":"\u6708\u66dc","lbl_cal_tue":"\u706b\u66dc","lbl_cal_wed":"\u6c34\u66dc","lbl_cal_thu":"\u6728\u66dc","lbl_cal_fri":"\u91d1\u66dc","lbl_cal_sat":"\u571f\u66dc","lbl_cal_sunday":"\u65e5\u66dc\u65e5","lbl_cal_monday":"\u6708\u66dc\u65e5","lbl_cal_tueday":"\u706b\u66dc\u65e5","lbl_cal_wednesday":"\u6c34\u66dc\u65e5","lbl_cal_thursday":"\u6728\u66dc\u65e5","lbl_cal_friday":"\u91d1\u66dc\u65e5","lbl_cal_saturday":"\u571f\u66dc\u65e5","alt_delete":"\u524a\u9664\u3057\u3066\u3082\u3088\u308d\u3057\u3044\u3067\u3057\u3087\u3046\u304b\uff1f","alt_no_change":"\u5909\u66f4\u7b87\u6240\u304c\u3042\u308a\u307e\u305b\u3093","alt_no_check":"\u9078\u629e\u3055\u308c\u3066\u3044\u307e\u305b\u3093","alt_confirm":"\u767b\u9332\u3057\u307e\u3059\u304b\uff1f","alt_registration_complete":"\u767b\u9332\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f","alt_failed_registe":"\u767b\u9332\u306b\u5931\u6557\u3057\u307e\u3057\u305f","alt_view_back":"\u5909\u66f4\u3092\u7834\u68c4\u3057\u3066\u5143\u306e\u753b\u9762\u306b\u623b\u308a\u307e\u3059\u304b\uff1f","lbl_sort":"\u4e26\u3073\u9806","lbl_edit":"\u7de8\u96c6","lbl_month_jan":"1\u6708","lbl_month_feb":"2\u6708","lbl_month_mar":"3\u6708","lbl_month_apr":"4\u6708","lbl_month_may":"5\u6708","lbl_month_jun":"6\u6708","lbl_month_jul":"7\u6708","lbl_month_aug":"8\u6708","lbl_month_sep":"9\u6708","lbl_month_oct":"10\u6708","lbl_month_nov":"11\u6708","lbl_month_dec":"12\u6708","lbl_day_off":"\u4f11\u65e5","lbl_statutory_holiday":"\u6240\u5b9a\u4f11\u65e5","lbl_legal_holiday":"\u6cd5\u5b9a\u4f11\u65e5","lbl_paid_vacation":"\u6709\u7d66","lbl_half_day_off":"\u534a\u4f11","lbl_sp_holiday":"\u7279\u5225\u4f11\u6687","msg_extrar_pay_description":"\u4e88\u6e2c\u4eba\u4ef6\u8cbb\u306b\u95a2\u3059\u308b\u5272\u5897\u306f\u4ee5\u4e0b\u3068\u306a\u308a\u307e\u3059<br>\u30fb\u6df1\u591c\u5272\u5897\uff1a22\u6642\u301c\u7fcc5\u6642\u307e\u3067\u306e\u52b4\u50cd\u6642\u9593<br>\u30fb\u6b8b\u696d\u5272\u5897\uff1a\u30b7\u30d5\u30c8\u3054\u3068\u306b8\u6642\u9593\u3092\u8d85\u3048\u305f\u52b4\u50cd\u6642\u9593<br>\u30fb\u4f11\u65e5\u5272\u5897\uff1a\u5e97\u8217\u8a2d\u5b9a\u306b\u5247\u3063\u305f\u4f11\u65e5\u8a2d\u5b9a","lbl_req_all_day":"\u7d42\u65e5\u5e0c\u671b","lbl_req_time_specified":"\u6642\u9593\u6307\u5b9a","lbl_theoretical_labor_cost":"\u4e88\u6e2c\u4eba\u4ef6\u8cbb","lbl_note":"\u5099\u8003","lbl_status":"\u72b6\u614b","lbl_staff_name":"\u5f93\u696d\u54e1\u540d","lbl_work_time":"\u52e4\u52d9\u6642\u9593","lbl_work_position":"\u4f5c\u696d\u5834\u6240","lbl_shift_name":"\u30b7\u30d5\u30c8\u540d\u79f0","btn_detail":"\u8a73\u7d30","lbl_start":"\u958b\u59cb","lbl_end":"\u7d42\u4e86","lbl_year":"\u5e74","lbl_month":"\u6708","lbl_day":"\u65e5","lbl_week_day":"\u66dc\u65e5","lbl_date":"\u65e5\u4ed8","lbl_store":"\u5e97\u8217","lbl_name":"\u540d\u79f0","lbl_user_id":"ID","btn_contract":"\u96c7\u7528\u5951\u7d04","lbl_company_name":"\u4f01\u696d\u540d","lbl_break":"\u4f11\u61a9","lbl_user_employment":"\u96c7\u7528\u5f62\u614b","lbl_staff_id":"\u5f93\u696d\u54e1ID","lbl_company_code":"\u4f01\u696d\u30b3\u30fc\u30c9","lbl_store_code":"\u5e97\u8217\u30b3\u30fc\u30c9","lbl_validity_period":"\u6709\u52b9\u671f\u9593","lbl_validity_start":"\u6709\u52b9\u671f\u9593\u958b\u59cb\u65e5","lbl_validity_end":"\u6709\u52b9\u671f\u9593\u7d42\u4e86\u65e5","lbl_working_system":"\u52b4\u50cd\u6642\u9593\u5236","lbl_amount":"\u91d1\u984d","lbl_tell_1":"\u96fb\u8a71\u756a\u53f7\uff11","lbl_tell_2":"\u96fb\u8a71\u756a\u53f7\uff12","lbl_fax":"FAX","lbl_e_mail":"\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9","lbl_allowance":"\u624b\u5f53","lbl_deduction":"\u63a7\u9664","lbl_default_select":"--select--","lbl_num":"No.","lbl_postal_code":"\u90f5\u4fbf\u756a\u53f7","lbl_address_1":"\u4f4f\u6240\uff11","lbl_address_2":"\u4f4f\u6240\uff12","lbl_address_3":"\u4f4f\u6240\uff13","lbl_language":"\u8a00\u8a9e","lbl_area":"\u5730\u57df","lbl_user_belong_store":"\u6240\u5c5e\u5e97\u8217","lbl_fixed_working_day":"\u6240\u5b9a\u52b4\u50cd\u65e5\u6570(\u6708\u5e73\u5747)","lbl_fixed_working_time_monthly":"\u6240\u5b9a\u52b4\u50cd\u6642\u9593(\u6708\u5e73\u5747)","lbl_bank_code":"\u9280\u884c\u30b3\u30fc\u30c9","lbl_branch_code":"\u652f\u5e97\u30b3\u30fc\u30c9","lbl_key_word":"\u30d5\u30ea\u30fc\u30ef\u30fc\u30c9","lbl_today":"\u4eca\u65e5","lbl_operation_management":"\u904b\u7528\u7ba1\u7406","lbl_dashboard":"\u30c0\u30c3\u30b7\u30e5\u30dc\u30fc\u30c9","lbl_shift_conf":"\u30b7\u30d5\u30c8\u78ba\u8a8d","lbl_shift_req":"\u30b7\u30d5\u30c8\u7533\u8acb","lbl_ta_req":"\u52e4\u6020\u7533\u8acb","lbl_ta_approve":"\u52e4\u6020\u627f\u8a8d","lbl_store_manage":"\u5e97\u8217\u7ba1\u7406","lbl_head_function":"\u672c\u90e8\u6a5f\u80fd","lbl_company_switch":"\u4f01\u696d\u5207\u66ff","lbl_download":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9","lbl_term":"\u5229\u7528\u898f\u7d04","lbl_manual":"\u64cd\u4f5c\u8aac\u660e","lbl_manual_ta":"\u52e4\u6020\u7ba1\u7406\u7de8","lbl_manual_ma":"\u30b7\u30d5\u30c8\u7ba1\u7406\u7de8","lbl_manual_st":"\u8a2d\u5b9a\u7de8","lbl_logout":"\u30ed\u30b0\u30a2\u30a6\u30c8","lbl_store_base":"\u5e97\u8217\u500b\u5225\u8a2d\u5b9a","lbl_store_holiday":"\u5e97\u8217\u4f11\u65e5\u8a2d\u5b9a","lbl_store_work_position":"\u4f5c\u696d\u5834\u6240\u8a2d\u5b9a","lbl_salary_allow":"\u624b\u5f53\u63a7\u9664\u8a2d\u5b9a","lbl_user_manage":"\u5f93\u696d\u54e1\u7ba1\u7406","lbl_user_list":"\u5f93\u696d\u54e1\u60c5\u5831","lbl_user_salary_manage":"\u5f93\u696d\u54e1\u7d66\u4e0e\u8a2d\u5b9a","lbl_user_contract":"\u96c7\u7528\u5951\u7d04","lbl_shift_manage":"\u30b7\u30d5\u30c8\u7ba1\u7406","lbl_shift_planning":"\u30b7\u30d5\u30c8\u4f5c\u6210","lbl_shift_time_pattern":"\u30d1\u30bf\u30fc\u30f3\u8a2d\u5b9a","lbl_shift_store_template":"\u4eba\u6570\u30fb\u67a0\u8a2d\u5b9a","lbl_shift_store_request":"\u5e97\u8217\u30b7\u30d5\u30c8\u5272\u5f53\u8a2d\u5b9a","lbl_shift_conf_staff":"\u5f93\u696d\u54e1\u5225\u30b7\u30d5\u30c8","lbl_shift_conf_daily":"\u65e5\u5225\u30b7\u30d5\u30c8","lbl_ta_daily":"\u65e5\u5225\u52e4\u6020","lbl_ta_staff":"\u5f93\u696d\u54e1\u5225\u52e4\u6020","lbl_data_export":"\u30c7\u30fc\u30bf\u62bd\u51fa","lbl_export_pca":"PCA","lbl_export_contract":"\u96c7\u7528\u5951\u7d04\u51fa\u529b","lbl_account_lock":"\u30a2\u30ab\u30a6\u30f3\u30c8\u30ed\u30c3\u30af\u89e3\u9664","lbl_company_manage":"\u4f01\u696d\u8a2d\u5b9a","lbl_company_basic_setting":"\u4f01\u696d\u57fa\u672c\u8a2d\u5b9a","lbl_country_manage":"\u56fd\u30fb\u5730\u57df\u8a2d\u5b9a","lbl_company_time_setting":"\u4f01\u696d\u6642\u9593\u5e2f\u9805\u76ee\u8a2d\u5b9a","lbl_company_al":"\u6709\u7d66\u4ed8\u4e0e\u8a2d\u5b9a","lbl_company_vacation":"\u4f11\u6687\u8a2d\u5b9a\u4e00\u89a7","lbl_store_time_setting":"\u5e97\u8217\u6642\u9593\u5e2f\u8a2d\u5b9a","lbl_store_budget":"\u5e97\u8217\u4e88\u7b97\u8a2d\u5b9a","lbl_store_option":"\u5e97\u8217\u30aa\u30d7\u30b7\u30e7\u30f3","lbl_option_manage":"\u30aa\u30d7\u30b7\u30e7\u30f3\u7ba1\u7406","lbl_invoice_manage":"\u8acb\u6c42\u7ba1\u7406","lbl_system_notification":"\u304a\u77e5\u3089\u305b\u8a2d\u5b9a","alt_failed_search":"\u691c\u7d22\u306b\u5931\u6557\u3057\u307e\u3057\u305f","lbl_auth_manage":"\u6a29\u9650\u7ba1\u7406","lbl_store_group":"\u5e97\u8217\u30b0\u30eb\u30fc\u30d7\u7ba1\u7406","lbl_approve_status":"\u65e5\u5225\u627f\u8a8d\u72b6\u6cc1","lbl_ta_close":"\u52e4\u6020\u6708\u7de0\u3081","lbl_expense_apply":"\u7d4c\u8cbb\u7533\u8acb","lbl_expense_approve":"\u7d4c\u8cbb\u627f\u8a8d","alt_failed_update":"\u66f4\u65b0\u306b\u5931\u6557\u3057\u307e\u3057\u305f","btn_regist":"\u767b\u9332","lbl_no_data":"\u30c7\u30fc\u30bf\u304c\u3042\u308a\u307e\u305b\u3093","lbl_regist":"\u767b\u9332","alt_delete_complete":"\u524a\u9664\u304c\u5b8c\u4e86\u3044\u305f\u3057\u307e\u3057\u305f","btn_check":"\u78ba\u8a8d","btn_reset":"\u521d\u671f\u5316","vld_max_length":"\u6700\u5927\u6587\u5b57\u6570","lbl_select_all":"\u5168\u9078\u629e","lbl_done":"\u5b8c\u4e86","lbl_month_jan_short":"1\u6708","lbl_month_feb_short":"2\u6708","lbl_month_mar_short":"3\u6708","lbl_month_apr_short":"4\u6708","lbl_month_may_short":"5\u6708","lbl_month_jun_short":"6\u6708","lbl_month_jul_short":"7\u6708","lbl_month_aug_short":"8\u6708","lbl_month_sep_short":"9\u6708","lbl_month_oct_short":"10\u6708","lbl_month_nov_short":"11\u6708","lbl_month_dec_short":"12\u6708","lbl_cal_cus_done_text":"\u9589\u3058\u308b","lbl_cal_cus_prev_text":"&#x3C;\u524d","lbl_cal_cus_next_text":"\u6b21&#x3E;","lbl_cal_cus_su_short":"\u65e5","lbl_cal_cus_mo_short":"\u6708","lbl_cal_cus_tu_short":"\u706b","lbl_cal_cus_we_short":"\u6c34","lbl_cal_cus_th_short":"\u6728","lbl_cal_cus_fr_short":"\u91d1","lbl_cal_cus_sa_short":"\u571f","lbl_cal_cus_year":"\u5e74","lbl_cal_cus_week":"\u9031","alt_illegal_transition":"\u4e0d\u6b63\u306a\u9077\u79fb\u304c\u884c\u308f\u308c\u307e\u3057\u305f","lbl_password_flg":"\u4eee\u30d1\u30b9\u30ef\u30fc\u30c9\u30d5\u30e9\u30b0","lbl_minute":"\u5206","lbl_hour":"\u6642\u9593","alt_update_complete":"\u66f4\u65b0\u304c\u5b8c\u4e86\u3057\u307e\u3057\u305f","lbl_mypage":"\u30de\u30a4\u30da\u30fc\u30b8","msg_unable_edit":"\u4f01\u696d\u5207\u308a\u66ff\u3048\u6642\u306f\u30de\u30a4\u30da\u30fc\u30b8\u304b\u3089\u60c5\u5831\u3092<br>\u7de8\u96c6\u3059\u308b\u3053\u3068\u306f\u3067\u304d\u307e\u305b\u3093","lbl_profile":"\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb","btn_pass_change":"\u30d1\u30b9\u30ef\u30fc\u30c9\u5909\u66f4","lbl_employee_num":"\u793e\u54e1\u756a\u53f7","lbl_user_name":"\u540d\u524d","lbl_user_name_kana":"\u30d5\u30ea\u30ac\u30ca","lbl_birthday":"\u751f\u5e74\u6708\u65e5","lbl_gender":"\u6027\u5225","lbl_male":"\u7537\u6027","lbl_female":"\u5973\u6027","lbl_n_a":"\u672a\u8a2d\u5b9a","lbl_mail_1":"\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b91","lbl_mail_2":"\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b92","lbl_more":"\u3082\u3063\u3068\u307f\u308b","lbl_less":"\u9589\u3058\u308b","lbl_salary_info":"\u7d66\u4e0e\u60c5\u5831","lbl_remain_paid_holiday":"\u6709\u7d66\u6b8b\u65e5\u6570","lbl_days":"\u65e5","lbl_service_length":"\u5728\u7c4d\u5e74\u6570","lbl_years":"\u5e74","lbl_salary":"\u7d66\u4e0e","lbl_entrance_date":"\u5165\u793e\u5e74\u6708\u65e5","lbl_personal_info":"\u500b\u4eba\u60c5\u5831","btn_wf":"\u30ef\u30fc\u30af\u30d5\u30ed\u30fc","lbl_resident_address":"\u4f4f\u6c11\u7968\u4f4f\u6240","lbl_address":"\u4f4f\u6240","lbl_commute_route":"\u901a\u52e4\u7d4c\u8def","lbl_line":"\u8def\u7dda\u540d","lbl_station":"\u6700\u5bc4\u99c5","lbl_parking_lot":"\u99d0\u8f2a\u5834\u540d","lbl_route_1":"\u7d4c\u8def\uff11","lbl_route_2":"\u7d4c\u8def2","lbl_route_3":"\u7d4c\u8def3","lbl_emergency_contact":"\u7dca\u6025\u9023\u7d61\u5148","lbl_relationship":"\u7d9a\u67c4","lbl_tell":"\u96fb\u8a71\u756a\u53f7","lbl_payment":"\u7d66\u4e0e\u652f\u6255\u3044\u5148","lbl_bank_classification":"\u53d6\u6271\u533a\u5206","lbl_sign":"\u8a18\u53f7","lbl_holder":"\u53e3\u5ea7\u540d\u7fa9","lbl_number":"\u756a\u53f7","lbl_bank_name":"\u9280\u884c\u540d","lbl_bank_branch":"\u9280\u884c\u30fb\u652f\u5e97\u30b3\u30fc\u30c9","lbl_account_type":"\u53e3\u5ea7\u7a2e\u5225","lbl_save":"\u666e\u901a","lbl_check":"\u5f53\u5ea7","lbl_account_num":"\u53e3\u5ea7\u756a\u53f7","lbl_monthly_amount":"\u6708\u984d","lbl_daily_amount":"\u65e5\u984d","lbl_transportation_fee":"\u4ea4\u901a\u8cbb","lbl_fix_time":"\u56fa\u5b9a\u6642\u9593","lbl_valiable_monthly":"\u5909\u5f62\u52b4\u50cd(\u6708\u5358\u4f4d)","lbl_valiable_monthly_time":"\u5909\u5f62\u52b4\u50cd(\u6708\u5358\u4f4d)(\u6642\u9593\u5236)","lbl_flex":"\u30d5\u30ec\u30c3\u30af\u30b9\u30bf\u30a4\u30e0","lbl_discretionary":"\u88c1\u91cf\u52b4\u50cd","lbl_variable_month_shift":"\u5909\u5f62\u52b4\u50cd(\u6708\u5358\u4f4d)(\u30b7\u30d5\u30c8\u5236)","lbl_monthly_salary":"\u6708\u7d66","lbl_daily_wage":"\u65e5\u7d66","lbl_hourly_wage":"\u6642\u7d66","lbl_hourly_wage_time_zone":"\u6642\u9593\u5e2f\u5225\u6642\u7d66","lbl_regular_emp":"\u793e\u54e1","lbl_contract_emp":"\u5951\u7d04\u793e\u54e1","lbl_part_timer":"\u30d1\u30fc\u30c8","lbl_bank":"\u9280\u884c","lbl_post_bank":"\u3086\u3046\u3061\u3087","lbl_train":"\u96fb\u8eca","lbl_bus":"\u30d0\u30b9","lbl_other":"\u305d\u306e\u4ed6","lbl_relationship_01":"\u914d\u5076\u8005","lbl_relationship_02":"\u5b50","lbl_relationship_03":"\u7236","lbl_relationship_04":"\u6bcd","lbl_relationship_05":"\u7fa9\u7236","lbl_relationship_06":"\u7fa9\u6bcd","lbl_relationship_07":"\u7956\u7236","lbl_relationship_08":"\u7956\u6bcd","lbl_relationship_09":"\u5b6b","lbl_relationship_10":"\u5144","lbl_relationship_11":"\u59c9","lbl_relationship_12":"\u5f1f","lbl_relationship_13":"\u59b9","lbl_relationship_14":"\u7fa9\u5144","lbl_relationship_15":"\u7fa9\u59c9","lbl_relationship_16":"\u7fa9\u5f1f","lbl_relationship_17":"\u7fa9\u59b9","lbl_relationship_18":"\u4f2f\u7236","lbl_relationship_19":"\u4f2f\u6bcd","lbl_relationship_20":"\u53d4\u7236","lbl_relationship_21":"\u53d4\u6bcd","lbl_relationship_22":"\u7525","lbl_relationship_23":"\u59ea","lbl_relationship_24":"\u305d\u306e\u4ed6","lbl_full":"\u6e80","lbl_months":"\u304b\u6708","lbl_change_personal_info":"\u500b\u4eba\u60c5\u5831\u7570\u52d5\u7533\u8acb","lbl_change_submit":"\u7570\u52d5\u7533\u8acb","lbl_change_approval":"\u7570\u52d5\u627f\u8a8d","lbl_approval_route":"\u627f\u8a8d\u7d4c\u8def\u8a2d\u5b9a","lbl_required":"\uff1c\u5fc5\u9808\uff1e","lbl_user_list_base":"\u57fa\u672c","lbl_user_list_detail":"\u8a73\u7d30","lbl_user_list_allowance":"\u7d66\u4e0e","lbl_user_list_contract":"\u96c7\u7528\u5951\u7d04","lbl_user_list_family":"\u5bb6\u65cf","btn_download_reservation":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u4e88\u7d04","btn_file_list":"\u30d5\u30a1\u30a4\u30eb\u4e00\u89a7","lbl_download_file_list":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u53ef\u80fd\u30d5\u30a1\u30a4\u30eb\u4e00\u89a7","alt_failed_get_file_list":"\u30d5\u30a1\u30a4\u30eb\u4e00\u89a7\u304c\u53d6\u5f97\u3067\u304d\u307e\u305b\u3093\u3067\u3057\u305f","msg_no_file":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u53ef\u80fd\u306a\u30d5\u30a1\u30a4\u30eb\u304c\u3042\u308a\u307e\u305b\u3093","lbl_export_dcs_csv":"DCS\u7528CSV\u30d5\u30a1\u30a4\u30eb\u51fa\u529b","alt_reserved_download":"\u30c0\u30a6\u30f3\u30ed\u30fc\u30c9\u4e88\u7d04\u6e08\u307f\u3067\u3059","lbl_history":"\u5c65\u6b74","alt_typing_error":"\u5165\u529b\u9805\u76ee\u306b\u8aa4\u308a\u304c\u3042\u308a\u307e\u3059","lbl_target_staff":"\u5bfe\u8c61\u306e\u5f93\u696d\u54e1","lbl_manual_ex":"\u7d4c\u8cbb\u7533\u8acb\u7de8","lbl_manual_app":"\u6253\u523b\u30a2\u30d7\u30ea\u7de8","lbl_manual_sim":"\u7c21\u6613\u30de\u30cb\u30e5\u30a2\u30eb","lbl_manual_wf":"\u30ef\u30fc\u30af\u30d5\u30ed\u30fc\u7de8","lbl_manual_csv":"\u5f93\u696d\u54e1CSV\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u7de8","lbl_exchange_use_days":"\u4ee3\u4f11","lbl_exchange_remaining_days":"\u4ee3\u4f11\u6b8b\u65e5\u6570","lbl_service_cost_table":"\u30b5\u30fc\u30d3\u30b9\u539f\u4fa1\u8a08\u753b\u8868","btn_new_submit":"\u65b0\u898f\u7533\u8acb","alt_unexpected_error":"\u4e88\u671f\u305b\u306c\u30a8\u30e9\u30fc\u304c\u767a\u751f\u3057\u307e\u3057\u305f","lbl_employee_promotion_date":"\u6b63\u793e\u54e1\u96c7\u7528\u65e5","form_validation_required":"\u6b04\u306f\u5fc5\u9808\u30d5\u30a3\u30fc\u30eb\u30c9\u3067\u3059","form_validation_isset":"\u6b04\u306f\u5024\u304c\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_valid_email":"\u6b04\u306f\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u3068\u3057\u3066\u6b63\u3057\u3044\u5f62\u5f0f\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_valid_emails":"\u6b04\u306f\u6b63\u3057\u3044\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_valid_url":"\u6b04\u306f\u6b63\u3057\u3044URL\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_valid_ip":"\u6b04\u306f\u6b63\u3057\u3044IP\u30a2\u30c9\u30ec\u30b9\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_max_length_first":"\u6b04\u306f","form_validation_max_length":"\u6587\u5b57\u4ee5\u4e0b\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_min_length":"\u6587\u5b57\u4ee5\u4e0a\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_prm_differs":"\u6b04\u3068\u540c\u3058\u3067\u306f\u3044\u3051\u307e\u305b\u3093","form_validation_exact_length":"\u6b04\u306f{param}\u6587\u5b57\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_alpha":"\u6b04\u306f\u82f1\u5b57\u3060\u3051\u3067\u3059","form_validation_alpha_numeric":"\u6b04\u306f\u82f1\u6570\u5b57\u306e\u307f\u3067\u3059","form_validation_alpha_numeric_spaces":"\u6b04\u306f\u82f1\u6570\u5b57\u304b\u30b9\u30da\u30fc\u30b9\u306e\u307f\u3067\u3059","form_validation_alpha_dash":"\u6b04\u306f\u82f1\u6570\u5b57\u3001_(\u30a2\u30f3\u30c0\u30fc\u30b9\u30b3\u30a2)\u3001\u3082\u3057\u304f\u306f-(\u30cf\u30a4\u30d5\u30f3)\u306e\u307f\u3067\u3059","form_validation_numeric":"\u6b04\u306f\u6570\u5b57\u306e\u307f\u3067\u3059","form_validation_is_numeric":"\u6b04\u306f\u6570\u5b57\u306e\u307f\u3067\u3059","form_validation_integer":"\u6b04\u306f\u6574\u6570\u306e\u307f\u3067\u3059","form_validation_regex_match":"\u6b04\u306f\u6b63\u3057\u3044\u5f62\u5f0f\u3067\u306f\u3042\u308a\u307e\u305b\u3093","form_validation_matches":"\u6b04\u304c {param}\u6b04\u3068\u540c\u3058\u3067\u306f\u3042\u308a\u307e\u305b\u3093","form_validation_differs":"\u6b04\u306f{param}\u6b04\u3068\u540c\u3058\u3067\u306f\u3044\u3051\u307e\u305b\u3093","form_validation_is_unique":"\u6b04\u306f\u30e6\u30cb\u30fc\u30af\u306a\u5024\u3067\u306a\u3051\u308c\u3070\u306a\u308a\u307e\u305b\u3093","form_validation_is_natural":"\u6b04\u306f\u6570\u5024\u3060\u3051\u3067\u3059\u3002","form_validation_is_natural_no_zero":"\u6b04\u306f\u30bc\u30ed\u3088\u308a\u5927\u304d\u3044\u6570\u5024\u306e\u307f\u3067\u3059\u3002","form_validation_decimal":"\u6b04\u306f10\u9032\u6570\u306e\u307f\u3067\u3059\u3002","form_validation_less_than":"\u6b04\u306f{param}\u3088\u308a\u5c0f\u3055\u3044\u5024\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093\u3002","form_validation_less_than_equal_to":"\u6b04\u306f{param}\u4ee5\u4e0b\u306e\u5024\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093\u3002","form_validation_greater_than":"\u6b04\u306f{param}\u3088\u308a\u5927\u304d\u3044\u5024\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093\u3002","form_validation_greater_than_equal_to":"\u6b04\u306f{param}\u4ee5\u4e0a\u306e\u5024\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093\u3002","form_validation_error_message_not_set":"\u6b04\u306b\u9069\u5207\u306a\u30a8\u30e9\u30fc\u30e1\u30c3\u30bb\u30fc\u30b8\u304c\u3042\u308a\u307e\u305b\u3093","form_validation_error_message_not_size_match":"\u6841\u3067\u306a\u3051\u308c\u3070\u3044\u3051\u307e\u305b\u3093","form_validation_same_value":"\u540c\u3058\u5024\u306f\u8a2d\u5b9a\u51fa\u6765\u307e\u305b\u3093\u3002","form_validation_date_valid_value":"\u958b\u59cb\u65e5\u3068\u7d42\u4e86\u65e5\u304c\u4e0d\u6b63\u3067\u3059\u3002","form_validation_half_char":"\u306f\u534a\u89d2\u82f1\u6570\u5b57\u3001\u8a18\u53f7\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_greater_equal_date":" \u306f\u3001{param} \u3088\u308a\u4ee5\u524d\u306e\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_less_time":" \u306f\u3001{param} \u3088\u308a\u524d\u306e\u6642\u9593\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_greater_time":" \u306f\u3001{param} \u3088\u308a\u5f8c\u306e\u6642\u9593\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_valid_date":" \u306b\u6b63\u3057\u3044\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_alpha_numeric_mix":" \u306f\u3001\u534a\u89d2\u82f1\u6570\u6587\u5b57\u3092\u7d44\u307f\u5408\u308f\u305b\u3066\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_check_illegal_characters":"\u306b\u7981\u5247\u6587\u5b57\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_check_only_kana":"%s \u306f\u30ab\u30bf\u30ab\u30ca\u306e\u307f\u3067\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","form_validation_edit_unique":" \u30d5\u30a3\u30fc\u30eb\u30c9\u304c\u4f7f\u308f\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_is_store_unique":" \u30d5\u30a3\u30fc\u30eb\u30c9\u304c\u4f7f\u308f\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_numeric_minus":" \u30d5\u30a3\u30fc\u30eb\u30c9\u304c\u6570\u91cf\u307e\u305f\u306f\u30de\u30a4\u30ca\u30b9\u3060\u3051\u3067\u3059\u3002","form_validation_valid_format_Ym":" \u306f\u4e0d\u6b63\u306a\u5024\u3067\u3059\u3002","form_validation_valid_min_and_max_year":" \u306f\u4e0d\u6b63\u306a\u5024\u3067\u3059\u3002","form_validation_valid_phone_character_set":" \u306f\u6570\u5b57\u306e\u307f\u3067\u3059\u3002 .\u3001 -\u3001 +\u3001 (\u3001 ) \u53ca\u3073\u30b9\u30da\u30fc\u30b9\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_check_illegal_characters_sp":"\u306b\u7981\u5247\u6587\u5b57\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_check_illegal_characters_special":"\u306b\u7981\u5247\u6587\u5b57\u304c\u542b\u307e\u308c\u3066\u3044\u307e\u3059\u3002","form_validation_is_positive_number":"\u5024\u6bb5\u306f\u6b63\u6570\u3067\u3042\u308b\u3002","form_validation_check_foreign_key":"\u30c7\u30fc\u30bf\u30d9\u30fc\u30b9\u306b \u304c\u898b\u3064\u304b\u308a\u307e\u305b\u3093","form_validation_check_allow_value":" \u304c[{param}]\u306e\u5024\u306e\u307f\u3092\u3082\u3089\u3048\u307e\u3059","form_validation_is_max_repeating":"\u540c\u3058\u6570\u304c\u7d99\u7d9a\u306e{param}\u56de\u4ee5\u4e0a\u91cd\u8907\u3067\u304d\u307e\u305b\u3093\u3002","form_validation_is_same_user_id_and_pass":"\u30d1\u30b9\u30ef\u30fc\u30c9\u306fUser ID\u3068\u7570\u306a\u308a\u307e\u3059\u3002","form_validation_in_numeric_range":"\u30d5\u30a3\u30fc\u30eb\u30c9\u306b\u306f\u3001{param}\u306e\u6570\u5024\u3092\u542b\u3081\u308b\u5fc5\u8981\u304c\u3042\u308a\u307e\u3059","form_validation_valid_format_year_month":" \u306f\u4e0d\u6b63\u306a\u5024\u3067\u3059\u3002","form_validation_mail_exist":"{field}\u3068\u91cd\u8907\u3057\u305f\u30e1\u30fc\u30eb\u30a2\u30c9\u30ec\u30b9\u304c\u767b\u9332\u3055\u308c\u3066\u3044\u307e\u3059","check_kana":"\u6b04\u306f\u534a\u89d2\u30ab\u30ca\u3067\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","check_num":"\u6b04\u306f\u534a\u89d2\u6570\u5b57\u3067\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","alt_no_search_result":"\u691c\u7d22\u7d50\u679c\u304c\u3042\u308a\u307e\u305b\u3093\u3002","alt_file_select":"2MB\u672a\u6e80\u306e\u753b\u50cf\u30c7\u30fc\u30bf\u3092\u9078\u629e\u3057\u3066\u304f\u3060\u3055\u3044\u3002\u5229\u7528\u3067\u304d\u308b\u306e\u306fjpg, jpeg, png\u306e\u307f\u3067\u3059","alt_fail_upload_img":"\u30d7\u30ed\u30d5\u30a3\u30fc\u30eb\u753b\u50cf\u30a2\u30c3\u30d7\u30ed\u30fc\u30c9\u306b\u5931\u6557\u3057\u307e\u3057\u305f","lbl_stage":"\u30b9\u30c6\u30fc\u30b8","form_validation_less_equal_date":"{field} \u306f\u3001{param} \u4ee5\u964d\u306e\u65e5\u4ed8\u3092\u5165\u529b\u3057\u3066\u304f\u3060\u3055\u3044\u3002","alt_date_invalid":"\u691c\u7d22\u671f\u9593\u3092\u6b63\u3057\u304f\u8a2d\u5b9a\u3057\u304f\u3060\u3055\u3044\u3002\u4e0d\u6b63\u306a\u6587\u5b57\u304c\u542b\u307e\u308c\u3066\u304a\u308a\u307e\u3059\u3002","lbl_comment":"\u30b3\u30e1\u30f3\u30c8","lbl_fromDate":"\u958b\u59cb\u65e5","lbl_toDate":"\u7d42\u4e86\u65e5"},"change_submit":{"search_title":"\u7570\u52d5\u7533\u8acb","search_title_index":"\u7570\u52d5\u7533\u8acb\u4e00\u89a7\u691c\u7d22","submit_date":"\u7533\u8acb\u65e5","staff_name":"\u62c5\u5f53\u8005\u540d","applicant_name":"\u7533\u8acb\u8005\u540d","change_type":"\u7570\u52d5\u7a2e\u5225","remarks":"\u7570\u52d5\u7a2e\u5225\u306e\u5099\u8003","submit_state":"\u7533\u8acb\u72b6\u614b","detail":"\u8a73\u7d30","display_title":"\u7570\u52d5\u7533\u8acb\u4e00\u89a7","msg_no_data_available":"\u30c7\u30fc\u30bf\u304c\u5b58\u5728\u3057\u307e\u305b\u3093","msg_creating_store_success":"\u4f01\u696d\u306e\u4f5c\u308a\u306f\u6210\u529f\u3067\u3059","msg_creating_store_fail":"\u4f01\u696d\u306e\u4f5c\u308a\u306f\u5931\u6557\u3067\u3059","msg_updating_store_success":"\u4f01\u696d\u306e\u66f4\u65b0\u306f\u6210\u529f\u3067\u3059","msg_updating_store_fail":"\u4f01\u696d\u306e\u66f4\u65b0\u306f\u5931\u6557\u3067\u3059","alt_cancel_confirmation":"\u4e00\u89a7\u306b\u623b\u308a\u3001\u3044\u304b\u304c\u3067\u3057\u3087\u3046\u304b\u3002\u5909\u5316\u304c\u4fdd\u5b58\u3055\u308c\u3066\u3044\u307e\u305b\u3093\u3002","alt_search_date_reverse":"\u691c\u7d22\u671f\u9593\u306e\u958b\u59cb\u65e5\u306f\u3001\u7d42\u4e86\u65e5\u3088\u308a\u524d\u306e\u65e5\u4ed8\u306b\u3057\u3066\u304f\u3060\u3055\u3044"}},"change_submit":{"search_title":"\u7570\u52d5\u7533\u8acb","search_title_index":"\u7570\u52d5\u7533\u8acb\u4e00\u89a7\u691c\u7d22","submit_date":"\u7533\u8acb\u65e5","staff_name":"\u62c5\u5f53\u8005\u540d","applicant_name":"\u7533\u8acb\u8005\u540d","change_type":"\u7570\u52d5\u7a2e\u5225","remarks":"\u7570\u52d5\u7a2e\u5225\u306e\u5099\u8003","submit_state":"\u7533\u8acb\u72b6\u614b","detail":"\u8a73\u7d30","display_title":"\u7570\u52d5\u7533\u8acb\u4e00\u89a7","msg_no_data_available":"\u30c7\u30fc\u30bf\u304c\u5b58\u5728\u3057\u307e\u305b\u3093","msg_creating_store_success":"\u4f01\u696d\u306e\u4f5c\u308a\u306f\u6210\u529f\u3067\u3059","msg_creating_store_fail":"\u4f01\u696d\u306e\u4f5c\u308a\u306f\u5931\u6557\u3067\u3059","msg_updating_store_success":"\u4f01\u696d\u306e\u66f4\u65b0\u306f\u6210\u529f\u3067\u3059","msg_updating_store_fail":"\u4f01\u696d\u306e\u66f4\u65b0\u306f\u5931\u6557\u3067\u3059","alt_cancel_confirmation":"\u4e00\u89a7\u306b\u623b\u308a\u3001\u3044\u304b\u304c\u3067\u3057\u3087\u3046\u304b\u3002\u5909\u5316\u304c\u4fdd\u5b58\u3055\u308c\u3066\u3044\u307e\u305b\u3093\u3002","alt_search_date_reverse":"\u691c\u7d22\u671f\u9593\u306e\u958b\u59cb\u65e5\u306f\u3001\u7d42\u4e86\u65e5\u3088\u308a\u524d\u306e\u65e5\u4ed8\u306b\u3057\u3066\u304f\u3060\u3055\u3044"}}');
+
+        function chBackGround (e) {
+            $(e).css('background-color', $(e).find('option:selected').attr('bgcolor'));
+            $(e).css('color', $(e).find('option:selected').attr('color'));
+        }
+    </script>
+            <div id="mainArea" class="padding-10-20 ht-100per">
+        <div id="cst_detail_area" style="overflow-x:hidden;overflow-y:auto;height:100%;">
+            <table class="w-100per">
+                <tr>
+                    <td>
+                        <form action="https://dev-ptr.postas.asia/time_management/c_change_submit/index" id="store_search_form" enctype="multipart/form-data" method="post" accept-charset="utf-8">
+                                                                                                                        <input type="hidden" name="csrf_name" value="57523c481a7a08ae8a166eb91fbdc26e" />
+
+                        <fieldset>
+                            <legend class="normal_color">
+                                異動申請一覧検索                            </legend>
+                            <table class="w-100per">
+                                <tr>
+                                    <td class="first_column_mobile">
+                                        <i id="home_icon" class="fa fa-home" aria-hidden="true"></i>
+                                    </td>
+                                    <!-- 店舗 -->
+                                    <td class="first_select_column">
+                                        <select id="store_code" class="w-90px" name="store_code"
+                                                >
+                                                                                                                                    <option value="001" selected>001:inte支店 vinh</option>
+                                                                                    </select>
+                                    </td>
+                                    <td class="first_column_mobile">
+                                        <i id="user_icon" class="fa fa-user" aria-hidden="true"></i>
+                                    </td>
+                                    <!-- ユーザー -->
+                                    <td class="second_select_column">
+                                        <select id="user_id_with_date" class="w-90px" name="user_id_with_date"
+                                                >
+                                                                                            <option value="">&nbsp;-- select --</option>
+                                                                                                                                    <option value="620506b_20180904"
+                                                                                                > スーパー店長 e                                            </option>
+                                                                                        <option value="334455_20180903"
+                                                                                                > 鈴木 誠                                            </option>
+                                                                                        <option value="098765_20180817"
+                                                                                                > ユーザーA e                                            </option>
+                                                                                        <option value="314760_20180809"
+                                                                                                > 井部test d                                            </option>
+                                                                                        <option value="465030_20180802"
+                                                                                                > takeda a                                            </option>
+                                                                                        <option value="100052_20181001"
+                                                                                                > 管理者 ユーザ                                            </option>
+                                                                                        <option value="465036_20180802"
+                                                                                                > test10                                            </option>
+                                                                                        <option value="465037_20180802"
+                                                                                                > test11                                            </option>
+                                                                                        <option value="465032_20180802"
+                                                                                                > 佐藤 なまえ                                            </option>
+                                                                                        <option value="465034_20180802"
+                                                                                                > test8                                            </option>
+                                                                                        <option value="12345678_20180802"
+                                                                                                > testB                                            </option>
+                                                                                        <option value="19920418_20180802"
+                                                                                                > test吉田                                            </option>
+                                                                                        <option value="123456_20180802"
+                                                                                                > testA                                            </option>
+                                                                                        <option value="123456789_20180802"
+                                                                                                > testC                                            </option>
+                                                                                        <option value="465035_20180802"
+                                                                                                > test9                                            </option>
+                                                                                        <option value="465031_20180802"
+                                                                                                > test竹田 q                                            </option>
+                                                                                        <option value="272080_20180801"
+                                                                                                > 吉田                                            </option>
+                                                                                        <option value="465033_20180801"
+                                                                                                > 武田                                            </option>
+                                                                                        <option value="101_20180701"
+                                                                                                > 101                                            </option>
+                                                                                        <option value="34567_20171231"
+                                                                                                > D                                            </option>
+                                                                                        <option value="1004_20171231"
+                                                                                                > パート                                            </option>
+                                                                                        <option value="320274_20171231"
+                                                                                                > 上関 直人                                            </option>
+                                                                                        <option value="1111_20171231"
+                                                                                                > 小山                                            </option>
+                                                                                        <option value="321456_20171231"
+                                                                                                > 峰　勇気                                            </option>
+                                                                                        <option value="321714_20171231"
+                                                                                                > 川原愛美                                            </option>
+                                                                                        <option value="1002_20171231"
+                                                                                                > てんちょ う                                            </option>
+                                                                                        <option value="1003_20171231"
+                                                                                                > 社員                                            </option>
+                                                                                        <option value="12345_20171201"
+                                                                                                > 削除テスト                                            </option>
+                                                                                        <option value="321055_20171001"
+                                                                                                > Vinh Nguyen                                            </option>
+                                                                                        <option value="112_20170921"
+                                                                                                > 1                                            </option>
+                                                                                        <option value="1111111111_20170921"
+                                                                                                > 1                                            </option>
+                                                                                        <option value="123456789098_20170921"
+                                                                                                > テスト2                                            </option>
+                                                                                        <option value="201070201071_20170804"
+                                                                                                > 高橋大樹                                            </option>
+                                                                                        <option value="101010_20170801"
+                                                                                                > 10                                            </option>
+                                                                                        <option value="55555_20170801"
+                                                                                                > 5                                            </option>
+                                                                                        <option value="66666_20170801"
+                                                                                                > 6                                            </option>
+                                                                                        <option value="77777_20170801"
+                                                                                                > 7                                            </option>
+                                                                                        <option value="88888_20170801"
+                                                                                                > 8                                            </option>
+                                                                                        <option value="1234567890_20170801"
+                                                                                                > test                                            </option>
+                                                                                        <option value="201070201070_20170721"
+                                                                                                > 菅原正史                                            </option>
+                                                                                        <option value="yukako_20170428"
+                                                                                                > yukako takamatsu                                            </option>
+                                                                                        <option value="333333_20170401"
+                                                                                                > 店長                                            </option>
+                                                                                        <option value="252267_20160301"
+                                                                                                > 高松佑夏子                                            </option>
+                                                                                        <option value="194079_20140401"
+                                                                                                > 橋場 宇門                                            </option>
+                                                                                        <option value="juugyouin2_20180701"
+                                                                                                > 従業員 二郎                                            </option>
+                                                                                        <option value="3354115_20180901"
+                                                                                                > 坂岡 陵                                            </option>
+                                                                                        <option value="444444_20190201"
+                                                                                                > 店長 ユーザ                                            </option>
+                                                                                        <option value="7777777_20180201"
+                                                                                                > 半年 経過君                                            </option>
+                                                                                        <option value="201070201096_20190201"
+                                                                                                > 自動申請 次郎                                            </option>
+                                                                                        <option value="3305641_20190401"
+                                                                                                > みらい みらい                                            </option>
+                                                                                        <option value="272081_20190401"
+                                                                                                > 佐野 充                                            </option>
+                                                                                        <option value="qaz_20190501"
+                                                                                                > qaz qaz                                            </option>
+                                                                                        <option value="qaz1_20190501"
+                                                                                                > qaz1 qaz1                                            </option>
+                                                                                        <option value="201070201109_20190501"
+                                                                                                > aaa qqq                                            </option>
+                                                                                        <option value="260452_20190601"
+                                                                                                > 岡崎 麻衣                                            </option>
+                                                                                        <option value="20190606_20190601"
+                                                                                                > ああああ あああ                                            </option>
+                                                                                        <option value="12345678999_20181211"
+                                                                                                > 検証 会社                                            </option>
+                                                                                        <option value="juugyouin1_20190601"
+                                                                                                > 従業員 一郎                                            </option>
+                                                                                        <option value="345502_20190701"
+                                                                                                > 佐藤 亮治                                            </option>
+                                                                                        <option value="12341234_20190823"
+                                                                                                > ken mochii                                            </option>
+                                                                                        <option value="thu1_20190801"
+                                                                                                        selected
+                                                                                                > thu one                                            </option>
+                                                                                        <option value="201070201110_20190901"
+                                                                                                > a c                                            </option>
+                                                                                    </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="check_third_column">
+                                        <i aria-hidden="true">自申請分に絞る</i>
+                                        <input id="check_mine" class="authority_update" type="checkbox" name="check_cols_all" value="1"
+                                                                                              checked
+                                                                                        >
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="ht-15px"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <!-- 検索 -->
+                                    <td class="float_r">
+                                        <input type="button" class="default-bgcolor" id="search" value="検索">
+                                    </td>
+                                    <td class="float_r">
+                                        <input type="button" class="cancel_frame" id="display_button" value="詳細非表示"
+                                               style="display:none;">
+                                    </td>
+                                    <td class="float_r">
+                                        <input type="button" class="save_frame" id="hide_button" value="詳細表示">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="ht-15px"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table id="search_area" class="search_detail" style="display:none;">
+                                <tr>
+                                    <td>
+                                        <hr class="search_area_hr">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="second_column">
+                                        <i aria-hidden="true" class="mr-5">異動種別</i>
+                                    </td>
+                                    <td class="first_select_column">
+                                        <select id="change_type" class="w-120px" name="change_type">
+                                            <option value="">&nbsp;-- select --</option>
+                                            <option value="1" >基本情報</option>
+                                            <option value="2" >住所情報</option>
+                                            <option value="3" >口座情報</option>
+                                            <option value="4" >緊急連絡先情報</option>
+                                            <option value="5" >通勤経路情報</option>
+                                            <option value="6" >家族情報</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="second_column">
+                                        <i aria-hidden="true" class="mr-5">申請状態</i>
+                                    </td>
+                                    <td class="second_select_column">
+                                        <select id="change_status" class="w-120px" name="change_status">
+                                            <option value="">&nbsp;-- select --</option>
+                                            <option value="0" >下書き</option>
+                                            <option value="1" >回付中</option>
+                                            <option value="2" >承認済み</option>
+                                            <option value="3" >差し戻し</option>
+                                            <option value="4" >却下</option>
+                                            <option value="5" >取り下げ</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="ht-15px"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="third_column">
+                                        <i aria-hidden="true">期間</i>
+                                    </td>
+                                    <td class="float_l">
+                                        <input id="submit_date_from" type="text"
+                                               class="font_s14 datepicker_form form-control calender_border"
+                                               name="target_date" maxlength="8"  value=""  readonly="readonly">
+                                        <div class="fromDate text-error"></div>
+                                    </td>
+                                    <td class="hyphen_column">
+                                        <i id="minus_icon" class="fa fa-minus" aria-hidden="true"></i>
+                                    </td>
+                                    <td class="float_l">
+                                        <input id="submit_date_to" type="text"
+                                               class="font_s14 datepicker_form form-control calender_border"
+                                               name="target_date" maxlength="8"  value=""  readonly="readonly">
+                                        <div class="toDate text-error"></div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <div class="mt-10 t-align-right">
+                <div class="dropdown-submenu" status="close">
+                <span class="submenu-title">
+                    <span>新規の異動種別</span>
+                    <span class="submenu-title-icon"><i class=" fa fa-caret-down"></i></span>
+                </span>
+                    <ul class="submenu">
+                        <a style="color:#CCCCCC;text-decoration:none" href="/time_management/c_change_user_basis/create" class="applied"><li class="submenu-list">基本情報</li></a>
+                        <a style="color:#CCCCCC;text-decoration:none" href="/time_management/c_change_address/create" ><li class="submenu-list">住所情報</li></a>
+                        <a style="color:#CCCCCC;text-decoration:none"  id="create_account"><li class="submenu-list">口座情報</li></a>
+                        <a style="color:#CCCCCC;text-decoration:none" href="/time_management/c_change_emergency_contact/create" ><li class="submenu-list">緊急連絡先情報</li></a>
+                        <a style="color:#CCCCCC;text-decoration:none" href="/time_management/c_change_submit_commuting_route/create" ><li class="submenu-list">通勤経路情報</li></a>
+                        <a style="color:#CCCCCC;text-decoration:none" href="/time_management/c_change_submit_family/index"><li class="submenu-list">家族情報</li></a>
+                    </ul>
+                </div>
+            </div>
+            <div class="ht-10px"></div>
+            <!-- Store list -->
+            <div id="table_container" class="over-auto submit_list_height w-100per">
+                <table id="submit_list" class="position_table_h position_table table-type02 mobile_table"
+                       _fixedhead="rows:1;">
+                    <thead class="master_list_h padding-10-0">
+                    <tr>
+                        <th class="cursor_pt w-40per">
+                            担当者名                            <span><i class="fa fa-sort" aria-hidden="true"></i></span>
+                        </th>
+                        <th class="cursor_pt w-20per">
+                            異動種別                            <span><i class="fa fa-sort" aria-hidden="true"></i></span>
+                        </th>
+                        <th class="cursor_pt w-20per">
+                            申請状態                            <span><i class="fa fa-sort" aria-hidden="true"></i></span>
+                        </th>
+                        <th class="w-10per">
+                            詳細                        </th>
+                    </tr>
+                    </thead>
+                    <tbody class="store_list_body">
+                                            <tr class="default_row w-100per ht-35px">
+                            <td class="t-align-left">
+                                thu one                            </td>
+                            <td>
+                                基本                            </td>
+                            <td>
+                                <form action="https://dev-ptr.postas.asia/time_management/c_change_submit/index" class="history_open_form" method="post" accept-charset="utf-8">
+                                     <input type="hidden" name="csrf_name" value="57523c481a7a08ae8a166eb91fbdc26e" />
+
+                                <input type="hidden" name="li_token" value>
+                                <input type="hidden" value="825" name="change_base_id">
+                                <a href="javascript:void(0)"
+                                   class="history_link">下書き</a>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="https://dev-ptr.postas.asia/time_management/c_change_submit/index" class="transparent-button" method="post" accept-charset="utf-8">
+                                                 <input type="hidden" name="csrf_name" value="57523c481a7a08ae8a166eb91fbdc26e" />
+
+                                <div class="ht-100per position_rel">
+                                    <input type="hidden" name="li_token" value>
+                                    <input type="hidden" value="825" name="change_base_id">
+                                    <input type="hidden" value="1" name="change_type">
+                                    <div class="enter_detail_icon">
+                                        <button type="button" class="transparent-button">
+                                            <i class="fa fa-pencil enabled" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                </form>
+                            </td>
+                        </tr>
+                                            <tr class="default_row w-100per ht-35px">
+                            <td class="t-align-left">
+                                thu one                            </td>
+                            <td>
+                                住所                            </td>
+                            <td>
+                                <form action="https://dev-ptr.postas.asia/time_management/c_change_submit/index" class="history_open_form" method="post" accept-charset="utf-8">
+<input type="hidden" name="csrf_name" value="57523c481a7a08ae8a166eb91fbdc26e" />                                        
+
+                                <input type="hidden" name="li_token" value>
+                                <input type="hidden" value="795" name="change_base_id">
+                                <a href="javascript:void(0)"
+                                   class="history_link">承認済み</a>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="https://dev-ptr.postas.asia/time_management/c_change_submit/index" class="transparent-button" method="post" accept-charset="utf-8">
+                                                                               <input type="hidden" name="csrf_name" value="57523c481a7a08ae8a166eb91fbdc26e" />
+
+                                <div class="ht-100per position_rel">
+                                    <input type="hidden" name="li_token" value>
+                                    <input type="hidden" value="795" name="change_base_id">
+                                    <input type="hidden" value="2" name="change_type">
+                                    <div class="enter_detail_icon">
+                                        <button type="button" class="transparent-button">
+                                            <i class="fa fa-pencil enabled" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                </form>
+                            </td>
+                        </tr>
+                                        </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Pop Up View -->
+    <div id="history_list" style="display:none;">
+        <div id="content-1" class="content_block ht-100per disp-block">
+            <div class="ht-100per w-100per over-y-auto">
+                <table class="table-type02 mobile_table t-align-center tablelayout-fixed" _fixedhead="rows:1;">
+                    <thead>
+                    <tr>
+                        <th class="w-30per" colspan="2">処理日時</th>
+                        <th class="w-30per" rowspan="2">従業員名</th>
+                        <th class="w-40per" rowspan="2">コメント</th>
+                    </tr>
+                    <tr>
+                        <th class="w-15per">ステージ</th>
+                        <th class="w-15per">処理内容</th>
+                    </tr>
+                    </thead>
+                    <tbody class="history_list_body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+        <script type="text/javascript" src="/js/fixed_midashi.js"></script>
+    <script type="text/javascript">
+        readOnly = 0;
+    </script>
+    <script type="text/javascript"
+            src="https://dev-ptr.postas.asia/js/views/change_submit/change_submit.js?v=3.2.0"></script>
+    <script type="text/javascript" src="https://dev-ptr.postas.asia/js/common/menu/dropdown-submenu.js"></script>
+    <script type="text/javascript" src="/js/fixed_midashi.js"></script>
+
+<!-- MYPAGE -->
+    <div id="mypage" style="display:none;">
+        <div id="mypage_mainArea">
+        <div class="mypage_user_img">
+        <div>
+                            <i class="fa fa-user-circle fa-mypage"></i>
+                    </div>
+    </div>
+    <div class="mypage_info">
+        <h1 class="normal_color">プロフィール</h1>
+                                    <input name="workflow" class="default-bgcolor mypage_right_side" type="button"
+                       value="個人情報異動申請"
+                       onclick="window.location.href='/time_management/c_change_submit/index'" style="width:170px">
+                        <input name="password_chage" class="default-bgcolor mypage_right_side" id="password_change" type="button"
+                   value="パスワード変更" style="width:150px">
+                <div>
+            <table class="table-type-mypage">
+                <tr>
+                    <th>従業員ID</th>
+                    <td>thu1</td>
+                </tr>
+                <tr>
+                    <th>社員番号</th>
+                    <td>thu1</td>
+                </tr>
+                <tr>
+                    <th>名前</th>
+                    <td>thu one</td>
+                </tr>
+                <tr>
+                    <th>フリガナ</th>
+                    <td> </td>
+                </tr>
+                <tr>
+                    <th>所属店舗</th>
+                    <td>inte支店 vinh</td>
+                </tr>
+                <tr class="mypage_detail">
+                    <th>生年月日</th>
+                    <td></td>
+                </tr>
+                <tr class="mypage_detail">
+                    <th>性別</th>
+                    <td>
+                                            男性
+                                    </tr>
+                <tr class="mypage_detail">
+                    <th>メールアドレス1</th>
+                    <td></td>
+                </tr>
+                <tr class="mypage_detail">
+                    <th>メールアドレス2</th>
+                    <td></td>
+                </tr>
+                <tr class="mypage_detail">
+                    <th>電話番号１</th>
+                    <td></td>
+                </tr>
+                <tr class="mypage_detail">
+                    <th>電話番号２</th>
+                    <td></td>
+                </tr>
+            </table>
+            <p class="mypage_more normal_color">もっとみる</p>
+        </div>
+    </div>
+    <div class="mypage_info">
+        <h1 class="normal_color">給与情報</h1>
+        <div>
+            <table class="table-type-mypage colspan">
+                <tr>
+                    <th>在籍年数</th>
+                    <td colspan="2">
+                                                    満 0 年
+                            1 か月
+                                            </td>
+                </tr>
+                <tr>
+                    <th>給与</th>
+                    <td>時給</td>
+                    <td>￥ 100,000,000</td>
+                </tr>
+                <tr class="mypage_detail">
+                    <th>労働時間制</th>
+                    <td colspan="2">固定時間</td>
+                </tr>
+                <tr class="mypage_detail">
+                    <th>雇用形態</th>
+                    <td colspan="2">社員</td>
+                </tr>
+                <tr class="mypage_detail">
+                    <th>入社年月日</th>
+                    <td colspan="2">2019/08/01</td>
+                </tr>
+                                                    <tr class="mypage_detail">
+                        <th>有給残日数</th>
+                        <td colspan="2">
+                                                            10.0 日
+                                                    </td>
+                    </tr>
+                                            </table>
+            <p class="mypage_more normal_color">もっとみる</p>
+        </div>
+    </div>
+            <div class="mypage_info">
+            <h1 class="normal_color">個人情報</h1>
+            <div class="mypage_personal_info">
+                <div class="mypage_header" style="margin-top: 40px;">
+                    <span class="mypage_bold">住民票住所</span>
+                    <span class="mypage_more normal_color">＋</span>
+                </div>
+                <table class="table-type-mypage detail_table">
+                    <tr>
+                        <th>郵便番号</th>
+                        <td>111 - 1111</td>
+                    </tr>
+                    <tr>
+                        <th>住所</th>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>1</td>
+                    </tr>
+                                    </table>
+            </div>
+            <div class="mypage_personal_info">
+                <div class="mypage_header">
+                    <span class="mypage_bold">住所</span>
+                    <span class="mypage_more normal_color">＋</span>
+                </div>
+                <table class="table-type-mypage detail_table">
+                    <tr>
+                        <th>郵便番号</th>
+                        <td>111 - 1111</td>
+                    </tr>
+                    <tr>
+                        <th>住所</th>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>1</td>
+                    </tr>
+                                    </table>
+            </div>
+            <div class="mypage_personal_info">
+                <div class="mypage_header">
+                    <span class="mypage_bold">通勤経路</span>
+                    <span class="mypage_more normal_color">＋</span>
+                </div>
+                <table class="table-type-mypage detail_table colspan">
+                    <tr>
+                        <th>路線名</th>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th>最寄駅</th>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th>交通費</th>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th>駐輪場名</th>
+                        <td colspan="2"></td>
+                    </tr>
+                    <tr>
+                        <th>経路１</th>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td colspan="2">
+                            → </td>
+                    </tr>
+                                                        </table>
+            </div>
+            <div class="mypage_personal_info">
+                <div class="mypage_header">
+                    <span class="mypage_bold">緊急連絡先</span>
+                    <span class="mypage_more normal_color">＋</span>
+                </div>
+                <table class="table-type-mypage detail_table">
+                    <tr>
+                        <th>名前</th>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <th>フリガナ</th>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <th>続柄</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>電話番号</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>郵便番号</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th>住所</th>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td></td>
+                    </tr>
+                                    </table>
+            </div>
+            <div class="mypage_personal_info">
+                <div class="mypage_header">
+                    <span class="mypage_bold">給与支払い先</span>
+                    <span class="mypage_more normal_color">＋</span>
+                </div>
+                <table class="table-type-mypage detail_table">
+                                            <tr>
+                            <th>取扱区分</th>
+                            <td>銀行</td>
+                        </tr>
+                        <tr>
+                            <th>銀行名</th>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <th>銀行・支店コード</th>
+                            <td>1111 - 111</td>
+                        </tr>
+                        <tr>
+                            <th>口座種別</th>
+                            <td>
+                                                                    普通
+                                                            </td>
+                        </tr>
+                        <tr>
+                            <th>口座名義</th>
+                            <td>ﾃｽﾄ</td>
+                        </tr>
+                        <tr>
+                            <th>口座番号</th>
+                            <td>1111111</td>
+                        </tr>
+                                                </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
